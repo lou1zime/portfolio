@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getProject, projects, tr } from '@/content/projects';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { Suspense } from 'react';
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
 
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: Params) {
   return { title: getProject(slug)?.title ?? 'Project' };
 }
 
-export default async function ProjectPage({ params }: Params) {
+async function ProjectContent({ params }: Params) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
@@ -35,7 +36,6 @@ export default async function ProjectPage({ params }: Params) {
 
       <div className="cover">
         <Image src={p.cover} alt="Cover" width={750} height={200} />
-        {/* <Mosh src={p.cover} config={presets[p.mosh ?? 'subtle']} /> */}
       </div>
 
       <p className="prose">{tr(p.description, locale)}</p>
@@ -58,5 +58,13 @@ export default async function ProjectPage({ params }: Params) {
         ))}
       </div>
     </main>
+  );
+}
+
+export default function ProjectPage({ params }: Params) {
+  return (
+    <Suspense fallback={<div className="page">Loading project...</div>}>
+      <ProjectContent params={params} />
+    </Suspense>
   );
 }
