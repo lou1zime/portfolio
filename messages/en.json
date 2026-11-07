@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "tagline": "Developer"
+  },
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "allWork": "All work →",
+    "language": "Language",
+    "toDark": "Switch to dark mode",
+    "toLight": "Switch to light mode",
+    "colorOn": "Turn on color",
+    "colorOff": "Turn off color"
+  },
+  "home": {
+    "selectedWork": "Selected work"
+  },
+  "projects": {
+    "title": "All work",
+    "role": "Role",
+    "stack": "Stack"
+  },
+  "about": {
+    "title": "About",
+    "body": "Write a few honest sentences here: who you are, what you build, what you want to do next.",
+    "email": "Email"
+  }
+}

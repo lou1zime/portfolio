@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "tagline": "Développeur"
+  },
+  "nav": {
+    "work": "Projets",
+    "about": "À propos",
+    "contact": "Contact",
+    "allWork": "Tous les projets →",
+    "language": "Langue",
+    "toDark": "Passer en mode sombre",
+    "toLight": "Passer en mode clair",
+    "colorOn": "Activer la couleur",
+    "colorOff": "Désactiver la couleur"
+  },
+  "home": {
+    "selectedWork": "Projets sélectionnés"
+  },
+  "projects": {
+    "title": "Tous les projets",
+    "role": "Rôle",
+    "stack": "Stack"
+  },
+  "about": {
+    "title": "À propos",
+    "body": "Écris ici quelques phrases sincères : qui tu es, ce que tu construis, ce que tu veux faire ensuite.",
+    "email": "E-mail"
+  }
+}
