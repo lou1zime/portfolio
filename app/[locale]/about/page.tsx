@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import SocialLink from '@/components/SocialLink';
 import { site } from '@/content/site';
+import '../../project.css';
 import './about.css';
 
 export default async function About({

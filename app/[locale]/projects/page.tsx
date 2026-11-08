@@ -6,6 +6,7 @@ import { education, experience } from '@/content/experience';
 import { projects } from '@/content/projects';
 import './work.css';
 import { Suspense } from 'react';
+import Loading from '@/components/Loading';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -19,8 +20,10 @@ async function Work({ params, searchParams }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations('work');
 
-  const initial: WorkKey =
-    list === 'experience' || list === 'education' ? list : 'projects';
+  const initial =
+    list === 'experience' || list === 'education' || list === 'projects'
+      ? (list as WorkKey)
+      : null;
 
   return (
     <main className="section">
@@ -49,7 +52,7 @@ async function Work({ params, searchParams }: Props) {
 
 export default async function WorkPage({ params, searchParams }: Props) {
   return (
-    <Suspense fallback={<div className="page">Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Work params={params} searchParams={searchParams} />
     </Suspense>
   );

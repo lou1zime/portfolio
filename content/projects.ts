@@ -42,6 +42,24 @@ export const projects: Project[] = [
       { label: 'GitHub', href: 'https://github.com/lou1zime/banteay-class' },
     ],
   },
+  {
+    slug: 'play-sync',
+    title: 'Play Sync',
+    year: '2025',
+    role: { en: 'Personal project', fr: 'Projet personnel' },
+    summary: {
+      en: 'A real-time synchronization tool for media or playback.',
+      fr: 'Un outil de synchronisation en temps réel pour les médias ou la lecture.',
+    },
+    description: {
+      en: 'A real-time synchronization application designed to coordinate media playback or state sharing across multiple clients.',
+      fr: 'Une application de synchronisation en temps réel conçue pour coordonner la lecture multimédia ou le partage d’état entre plusieurs clients.',
+    },
+    stack: ['TypeScript', 'Node.js', 'WebSockets'],
+    cover: null,
+    images: [],
+    links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/play-sync' }],
+  },
   // {
   //   // remove?
   //   slug: 'legacy-todo',
@@ -76,6 +94,24 @@ export const projects: Project[] = [
   // },
 
   // ---------- 2025 ----------
+  {
+    slug: 'area',
+    title: 'AREA',
+    year: '2025',
+    role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
+    summary: {
+      en: 'An automation platform inspired by IFTTT, connecting various services and triggers.',
+      fr: 'Une plateforme d’automatisation inspirée d’IFTTT, connectant divers services et déclencheurs.',
+    },
+    description: {
+      en: 'AREA is an EPITECH project consisting of a web and mobile application that lets users create automated workflows (Action-Reaction chains) between different services like weather, mail, and social platforms.',
+      fr: 'AREA est un projet EPITECH composé d’une application web et mobile permettant aux utilisateurs de créer des flux de travail automatisés (chaînes Action-Réaction) entre différents services.',
+    },
+    stack: ['TypeScript', 'React', 'Node.js', 'Docker'],
+    cover: null,
+    images: [],
+    links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/area' }],
+  },
   {
     slug: 'gnoland-dapps',
     title: '*gno.land dApps',
@@ -169,7 +205,7 @@ export const projects: Project[] = [
   {
     slug: 'workshop-rust',
     title: 'Workshop Rust',
-    year: '2023',
+    year: '2024',
     role: { en: 'ASTEK workshop', fr: "Workshop entant qu'ASTEK" },
     summary: {
       en: 'This workshop serves as a personal collection exercises or learning materials focused on the Rust programming language.',
@@ -187,6 +223,64 @@ export const projects: Project[] = [
         label: 'GitHub',
         href: 'https://github.com/MartinFillon/Workshop-rust',
       },
+    ],
+  },
+  {
+    slug: 'feed-the-beast',
+    title: 'Feed the Beast',
+    year: '2024',
+    role: { en: 'Personal project', fr: 'Projet personnel' },
+    summary: {
+      en: 'A utility or tracker for managing game resources and progression.',
+      fr: 'Un outil utilitaire pour la gestion des ressources de jeu et de la progression.',
+    },
+    description: {
+      en: 'A personal project focused on tracking and organizing resources, automation, or gameplay mechanics.',
+      fr: 'Un projet personnel axé sur le suivi et l’organisation de ressources, l’automatisation ou les mécaniques de jeu.',
+    },
+    stack: ['TypeScript', 'React'],
+    cover: null,
+    images: [],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/lou1zime/feed-the-beast' },
+    ],
+  },
+  {
+    slug: 'pandoc',
+    title: 'Pandoc Tools',
+    year: '2024',
+    role: { en: 'Personal project', fr: 'Projet personnel' },
+    summary: {
+      en: 'Custom filters and tooling extensions for Pandoc document conversion.',
+      fr: 'Filtres personnalisés et outils d’extension pour la conversion de documents Pandoc.',
+    },
+    description: {
+      en: 'A collection of custom scripts and filters designed to streamline document generation, formatting, and conversion workflows using Pandoc.',
+      fr: 'Une collection de scripts et filtres personnalisés conçus pour rationaliser les flux de génération, de formatage et de conversion de documents avec Pandoc.',
+    },
+    stack: ['Python', 'Lua'],
+    cover: null,
+    images: [],
+    links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/pandoc' }],
+  },
+  {
+    slug: 'choco-bueno',
+    title: 'Choco Bueno',
+    year: '2024',
+    role: { en: 'Personal project', fr: 'Projet personnel' },
+    summary: {
+      en: 'A fun full-stack web application with an interactive interface.',
+      fr: 'Une application web full-stack ludique dotée d’une interface interactive.',
+    },
+    description: {
+      en: 'A playful full-stack project exploring modern web technologies, smooth UI interactions, and clean architecture.',
+      fr: 'Un projet full-stack ludique explorant les technologies web modernes, les interactions d’interface fluides et une architecture propre.',
+    },
+    stack: ['TypeScript', 'React', 'TailwindCSS'],
+    cover: null,
+    images: [],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/lou1zime/choco-bueno' },
     ],
   },
 
@@ -246,6 +340,62 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/MartinFillon/42zsh' }],
+  },
+  {
+    slug: 'shakshuka',
+    title: 'Shakshuka',
+    year: '2023',
+    role: { en: 'Personal project', fr: 'Projet personnel' },
+    summary: {
+      en: 'A cozy web application or tool built with modern full-stack practices.',
+      fr: 'Une application web conviviale construite avec des pratiques full-stack modernes.',
+    },
+    description: {
+      en: 'A web application created as a creative playground, combining clean frontend design with robust backend logic.',
+      fr: 'Une application web créée comme un terrain de jeu créatif, combinant un design frontend épuré et une logique backend robuste.',
+    },
+    stack: ['Next.js', 'TypeScript', 'TailwindCSS'],
+    cover: null,
+    images: [],
+    links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/shakshuka' }],
+  },
+  {
+    slug: 'garage-poc',
+    title: 'Garage PoC',
+    year: '2023',
+    role: { en: 'R&D / Personal project', fr: 'Projet R&D / personnel' },
+    summary: {
+      en: 'A proof of concept exploring distributed storage or garage management systems.',
+      fr: 'Une preuve de concept explorant les systèmes de stockage distribué ou de gestion.',
+    },
+    description: {
+      en: 'An experimental proof of concept focused on distributed object storage or backend system architecture.',
+      fr: 'Une preuve de concept expérimentale axée sur le stockage d’objets distribués ou l’architecture de systèmes backend.',
+    },
+    stack: ['Rust', 'Docker'],
+    cover: null,
+    images: [],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/lou1zime/garage_poc' },
+    ],
+  },
+  {
+    slug: 'type-tier',
+    title: 'Type Tier',
+    year: '2023',
+    role: { en: 'Personal project', fr: 'Projet personnel' },
+    summary: {
+      en: 'A TypeScript type-level utility library for advanced generic type manipulations.',
+      fr: 'Une bibliothèque d’utilitaires au niveau des types TypeScript pour des manipulations génériques avancées.',
+    },
+    description: {
+      en: 'An exploration of advanced TypeScript type system features, implementing type-level data structures, validations, and utility transformations.',
+      fr: 'Une exploration des fonctionnalités avancées du système de types TypeScript, implémentant des structures de données, des validations et des transformations utilitaires au niveau des types.',
+    },
+    stack: ['TypeScript'],
+    cover: null,
+    images: [],
+    links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/type-tier' }],
   },
 ];
 

@@ -75,7 +75,7 @@ export default function Navbar({ initialPalette, initialTheme }: NavbarProps) {
         <div className="navCols compact">
           <div className="navCol hasPreview">
             <ScrambleLink
-              href="/projects"
+              href="/projects?list=projects"
               label={t('allWork')}
               className="navColHead"
             >

@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing';
 import { Suspense } from 'react';
 import '@/app/project.css';
 import ProjectLink from '@/components/ProjectLink';
+import Loading from '@/components/Loading';
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
 
@@ -79,7 +80,7 @@ async function ProjectContent({ params }: Params) {
 
 export default function ProjectPage({ params }: Params) {
   return (
-    <Suspense fallback={<div className="page">Loading project...</div>}>
+    <Suspense fallback={<Loading />}>
       <ProjectContent params={params} />
     </Suspense>
   );

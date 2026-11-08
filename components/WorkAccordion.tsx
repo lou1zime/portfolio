@@ -6,7 +6,7 @@ export type WorkKey = 'projects' | 'experience' | 'education';
 const KEYS: WorkKey[] = ['projects', 'experience', 'education'];
 
 type Props = {
-  initial: WorkKey; // which section starts open (from ?list=... in the URL)
+  initial: WorkKey | null; // which section starts open (from ?list=... in the URL)
   labels: Record<WorkKey, string>; // big title of each section
   counts: Record<WorkKey, number>; // small number shown next to each title
   panels: Record<WorkKey, ReactNode>; // the three lists, rendered on the server
@@ -34,7 +34,7 @@ export default function WorkAccordion({
 
     // keep the address in sync so a section can be linked directly
     const url = new URL(window.location.href);
-    if (next === 'experience' || next === 'education')
+    if (next === 'experience' || next === 'education' || next === 'projects')
       url.searchParams.set('list', next);
     else url.searchParams.delete('list');
     window.history.replaceState(null, '', url);
