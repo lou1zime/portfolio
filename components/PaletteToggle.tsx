@@ -2,29 +2,28 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { setPref } from '@/lib/prefs';
 
-const SIZE = 26; // bucket size in px: change this one number to make it bigger or smaller
+const SIZE = 26;
+
+type Props = {
+  initial?: boolean;
+};
 
 // Paint-bucket button: turns the purple/yellow color palette on and off.
 // Off = empty bucket. On = bucket tilts and fills with paint.
 // The palette itself lives on <html data-palette="color">.
-export default function PaletteToggle() {
+export default function PaletteToggle({ initial = false }: Props) {
   const t = useTranslations('nav');
-  const [on, setOn] = useState(
-    () =>
-      typeof window !== 'undefined' &&
-      document.documentElement.dataset.palette === 'color'
-  );
+  const [on, setOn] = useState(initial);
 
   const toggle = () => {
     const next = !on;
     if (next) document.documentElement.dataset.palette = 'color';
     else delete document.documentElement.dataset.palette;
-    try {
-      localStorage.setItem('palette', next ? 'color' : 'plain');
-    } catch {}
+    setPref('palette', next ? 'color' : 'plain');
     setOn(next);
-    window.dispatchEvent(new Event('themechange')); // lets canvas components re-read colors
+    window.dispatchEvent(new Event('themechange'));
   };
 
   return (

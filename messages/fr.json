@@ -6,21 +6,37 @@
     "work": "Projets",
     "about": "À propos",
     "contact": "Contact",
-    "allWork": "Tous les projets →",
+    "experience": "Expérience →",
+    "education": "Formation →",
+    "allWork": "Tous les projets",
     "language": "Langue",
     "toDark": "Passer en mode sombre",
     "toLight": "Passer en mode clair",
     "colorOn": "Activer la couleur",
-    "colorOff": "Désactiver la couleur"
+    "colorOff": "Désactiver la couleur",
+    "more": "+{count} de plus →"
+  },
+  "home": {
+    "status": "Disponible pour un stage de 6 mois à temps plein à partir du 1er mars 2027"
+  },
+  "work": {
+    "title": "Parcours",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "education": "Formation",
+    "switch": "Choisir une liste"
   },
   "projects": {
     "title": "Tous les projets",
     "role": "Rôle",
-    "stack": "Stack"
+    "stack": "Stack",
+    "sourceCode": "Source code"
   },
   "about": {
     "title": "À propos",
     "body": "Étudiante en 5e année à EPITECH Paris, avec une expérience en développement logiciel, programmation en Rust, contribution à des projets open source et conception de prototypes d'applications décentralisées. Expérience en environnement professionnel en France, complétée par une année d'échange universitaire en Corée du Sud. Recherche une opportunité en développement backend ou logiciel.",
-    "email": "E-mail"
+    "email": "E-mail",
+    "experience": "Expérience",
+    "education": "Formation"
   }
 }

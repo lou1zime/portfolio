@@ -2,27 +2,24 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { setPref } from '@/lib/prefs';
 
 type Theme = 'light' | 'dark';
 
-// Half-filled circle button. The theme itself lives on <html data-theme="...">.
-export default function ThemeToggle() {
+type Props = {
+  initial?: Theme;
+};
+
+export default function ThemeToggle({ initial = 'light' }: Props) {
   const t = useTranslations('nav');
-  const [theme, setTheme] = useState(() =>
-    typeof window !== 'undefined' &&
-    document.documentElement.dataset.theme === 'dark'
-      ? 'dark'
-      : 'light'
-  );
+  const [theme, setTheme] = useState<Theme>(initial);
 
   const toggle = () => {
     const next: Theme = theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = next;
-    try {
-      localStorage.setItem('theme', next);
-    } catch {}
+    setPref('theme', next);
     setTheme(next);
-    window.dispatchEvent(new Event('themechange')); // lets canvas components re-read colors
+    window.dispatchEvent(new Event('themechange'));
   };
 
   return (

@@ -4,7 +4,7 @@ import { getProject, projects, tr } from '@/content/projects';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Suspense } from 'react';
-import '@/app/project.css'
+import '@/app/project.css';
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
 
