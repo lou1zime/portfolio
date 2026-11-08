@@ -13,12 +13,11 @@ export type Project = {
   summary: Localized; // one line, shown in the list
   description: Localized; // longer text on the project page
   stack: string[];
-  cover: { src: string; width: number; height: number }; // path under /public
+  cover: { src: string; width: number; height: number } | null; // path under /public
   images: string[]; // extra images on the project page
   links: { label: string; href: string }[];
 };
 
-// Years marked "TODO" are my best guess: check them against your own timeline.
 export const projects: Project[] = [
   // ---------- 2026 ----------
   {
@@ -35,42 +34,46 @@ export const projects: Project[] = [
       fr: 'Un projet personnel inspiré de Momoyoga, conçu pour une entreprise de yoga indépendante au Cambodge. Il gère les cours et les réservations, avec une connexion simple via des fournisseurs OAuth. Il n’y a pas de paiement en ligne : l’application suit seulement l’argent attendu et l’argent encaissé, pour que rien ne se perde.',
     },
     stack: ['Next.js', 'Prisma', 'PostgreSQL', 'TypeScript'],
-    cover: { src: '/projects/covers/banteay.png', width: 500, height: 500 },
+    cover: null,
+    // cover: { src: '/projects/covers/banteay.png', width: 400, height: 400 },
+    // images: ['/projects/covers/banteay.png'],
     images: [],
-    links: [],
-  },
-  {
-    // remove?
-    slug: 'legacy-todo',
-    title: 'legacy',
-    year: '2026',
-    role: { en: 'EPITECH project', fr: 'Projet EPITECH' },
-    summary: {
-      en: 'Metrics and dashboards for an Express and BullMQ app, all running in Docker.',
-      fr: 'Métriques et tableaux de bord pour une application Express et BullMQ, le tout dans Docker.',
-    },
-    description: {
-      en: 'A school project built around an event-driven todo app: an Express API, a Redis-backed BullMQ queue for notifications, a separate worker and a MySQL database. We added observability to it, with metrics exposed to Prometheus and a Grafana dashboard, everything running in Docker Compose, and wrote an architecture decision record explaining the choices.',
-      fr: 'Un projet d’école autour d’une application de todo pilotée par les événements : une API Express, une file BullMQ sur Redis pour les notifications, un worker séparé et une base MySQL. J’y ai ajouté de l’observabilité, avec des métriques exposées à Prometheus et un tableau de bord Grafana, le tout dans Docker Compose, et j’ai rédigé un ADR qui explique les choix.',
-    },
-    stack: [
-      'Node.js',
-      'Express',
-      'BullMQ',
-      'Redis',
-      'MySQL',
-      'Prometheus',
-      'Grafana',
-      'Docker',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/lou1zime/banteay-class' },
     ],
-    cover: {
-      src: '/projects/covers/observability.jpg',
-      width: 500,
-      height: 500,
-    },
-    images: [],
-    links: [],
   },
+  // {
+  //   // remove?
+  //   slug: 'legacy-todo',
+  //   title: 'legacy',
+  //   year: '2026',
+  //   role: { en: 'EPITECH project', fr: 'Projet EPITECH' },
+  //   summary: {
+  //     en: 'Metrics and dashboards for an Express and BullMQ app, all running in Docker.',
+  //     fr: 'Métriques et tableaux de bord pour une application Express et BullMQ, le tout dans Docker.',
+  //   },
+  //   description: {
+  //     en: 'A school project built around an event-driven todo app: an Express API, a Redis-backed BullMQ queue for notifications, a separate worker and a MySQL database. We added observability to it, with metrics exposed to Prometheus and a Grafana dashboard, everything running in Docker Compose, and wrote an architecture decision record explaining the choices.',
+  //     fr: 'Un projet d’école autour d’une application de todo pilotée par les événements : une API Express, une file BullMQ sur Redis pour les notifications, un worker séparé et une base MySQL. J’y ai ajouté de l’observabilité, avec des métriques exposées à Prometheus et un tableau de bord Grafana, le tout dans Docker Compose, et j’ai rédigé un ADR qui explique les choix.',
+  //   },
+  //   stack: [
+  //     'Node.js',
+  //     'Express',
+  //     'BullMQ',
+  //     'Redis',
+  //     'MySQL',
+  //     'Prometheus',
+  //     'Grafana',
+  //     'Docker',
+  //   ],
+  //   cover: {
+  //     src: '/projects/covers/observability.jpg',
+  //     width: 500,
+  //     height: 500,
+  //   },
+  //   images: [],
+  //   links: [],
+  // },
 
   // ---------- 2025 ----------
   {
@@ -90,16 +93,21 @@ export const projects: Project[] = [
       fr: 'D’avril à juillet 2025, j’ai travaillé entièrement à distance pour All In Bits, l’entreprise berlinoise derrière gno.land et New Tendermint. J’y ai conçu et testé des concepts d’applications décentralisées (dApps) sur gno.land, une plateforme blockchain open source.',
     },
     stack: ['Gno'],
-    cover: { src: '/projects/covers/gnoland.jpg', width: 500, height: 500 },
+    cover: null,
     images: [],
-    links: [],
+    links: [
+      {
+        label: 'Contributions',
+        href: 'https://github.com/gnolang/gno/pulls?q=is%3Apr+state%3Aclosed+author%3Alou1zime',
+      },
+    ],
   },
 
   // ---------- 2024 ----------
   {
     slug: 'glados',
     title: 'GLaDOS',
-    year: '2024', // TODO: confirm
+    year: '2024',
     role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
     summary: {
       en: 'A programming language and the tools to run it, written in Haskell.',
@@ -110,7 +118,7 @@ export const projects: Project[] = [
       fr: 'GLaDOS est un projet EPITECH où l’équipe conçoit son propre langage de programmation et écrit les outils qui l’accompagnent, entièrement en Haskell.',
     },
     stack: ['Haskell'],
-    cover: { src: '/projects/covers/glados.png', width: 500, height: 500 },
+    cover: null,
     images: [],
     links: [
       { label: 'GitHub', href: 'https://github.com/MartinFillon/glados' },
@@ -123,7 +131,7 @@ export const projects: Project[] = [
   {
     slug: 'zappy',
     title: 'Zappy',
-    year: '2024', // TODO: confirm
+    year: '2024',
     role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
     summary: {
       en: 'A multiplayer network game with a server.',
@@ -134,14 +142,14 @@ export const projects: Project[] = [
       fr: 'Zappy est un projet d’équipe EPITECH : un jeu réseau construit autour d’un serveur écrit en C, auquel se connectent les clients.',
     },
     stack: ['C', 'Rust'],
-    cover: { src: '/projects/covers/zappy.png', width: 500, height: 500 },
+    cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/MartinFillon/Zappy' }],
   },
   {
     slug: 'bruteforce',
-    title: 'BruteForce',
-    year: '2024', // TODO: confirm
+    title: 'BruteForce Next-Gen',
+    year: '2024',
     role: { en: 'R&D developer', fr: 'Développeuse R&D' },
     summary: {
       en: 'An open-source Go project built at PoC Innovation.',
@@ -152,10 +160,33 @@ export const projects: Project[] = [
       fr: 'Réalisé en tant que membre de PoC Innovation, le laboratoire R&D d’EPITECH, dans le cadre de ses projets open source. Écrit en Go.',
     },
     stack: ['Go'],
-    cover: { src: '/projects/covers/bruteforce.png', width: 500, height: 500 },
+    cover: null,
     images: [],
     links: [
       { label: 'GitHub', href: 'https://github.com/PoCInnovation/BruteForce' },
+    ],
+  },
+  {
+    slug: 'workshop-rust',
+    title: 'Workshop Rust',
+    year: '2023',
+    role: { en: 'ASTEK workshop', fr: "Workshop entant qu'ASTEK" },
+    summary: {
+      en: 'This workshop serves as a personal collection exercises or learning materials focused on the Rust programming language.',
+      fr: "Cette atelier est une collectio d'exercices ou de supports d'apprentissage axés sur le langage de programmation Rust.",
+    },
+    description: {
+      en: 'GitHub repository structured as "workshop" containing step-by-step code examples, small projects, or exercises designed for learning systems programming concepts in Rust (such as ownership, borrowing, lifetimes, pattern matching, and cargo configuration).',
+      fr: "Dépôt GitHub structuré sous forme d'« atelier » (workshop) contient généralement des exemples de code progressifs, de petits projets ou des exercices conçus pour assimiler les concepts de programmation système de Rust (comme l'ownership, le borrowing, les durées de vie, le filtrage par motif et la configuration de Cargo).",
+    },
+    stack: ['Rust'],
+    cover: null,
+    images: [],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/MartinFillon/Workshop-rust',
+      },
     ],
   },
 
@@ -174,14 +205,14 @@ export const projects: Project[] = [
       fr: 'Pendant mon stage chez WALLIX à Paris, de septembre à décembre 2023, j’ai refondu la couche de communication du Bastion et l’ai migrée vers un proxy HTTP(S) inverse écrit en Rust. J’ai réalisé seule la preuve de concept initiale.',
     },
     stack: ['Rust'],
-    cover: { src: '/projects/covers/wallix.png', width: 775, height: 205 },
+    cover: null,
     images: [],
     links: [],
   },
   {
     slug: 'corewar',
     title: 'Corewar',
-    year: '2023', // TODO: confirm
+    year: '2023',
     role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
     summary: {
       en: 'An assembler and a virtual machine for the Corewar programming game, in C.',
@@ -192,7 +223,7 @@ export const projects: Project[] = [
       fr: 'Corewar est un projet d’équipe EPITECH autour du jeu de programmation classique où de petits programmes se battent pour le contrôle d’une machine virtuelle. Écrit en C.',
     },
     stack: ['C'],
-    cover: { src: '/projects/covers/corewar.png', width: 320, height: 350 },
+    cover: null,
     images: [],
     links: [
       { label: 'GitHub', href: 'https://github.com/MartinFillon/Corewar' },
@@ -201,7 +232,7 @@ export const projects: Project[] = [
   {
     slug: '42zsh',
     title: '42zsh',
-    year: '2023', // TODO: confirm
+    year: '2023',
     role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
     summary: {
       en: 'A Unix shell written in C.',
@@ -212,7 +243,7 @@ export const projects: Project[] = [
       fr: 'Un shell en ligne de commande écrit en C, dans le cadre d’un projet d’équipe EPITECH.',
     },
     stack: ['C'],
-    cover: { src: '/projects/covers/42zsh.png', width: 500, height: 500 },
+    cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/MartinFillon/42zsh' }],
   },

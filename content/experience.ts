@@ -11,16 +11,6 @@ export type Entry = {
 // Newest first. Edit the text here; the About page picks it up.
 export const experience: Entry[] = [
   {
-    org: 'EPITECH',
-    role: { en: 'Technical assistant', fr: 'Assistante technique, stagiaire' },
-    place: { en: 'Paris, France', fr: 'Paris, France' },
-    period: { en: 'Feb 2024 – present', fr: 'Fév. 2024 – aujourd’hui' },
-    description: {
-      en: 'Technical assistant for first- and second-year students in C/C++, Haskell and Docker.',
-      fr: 'Assistante technique pour les étudiants de première et deuxième année en C/C++, Haskell et Docker.',
-    },
-  },
-  {
     org: 'All In Bits (gno.land, New Tendermint)',
     role: {
       en: 'Junior developer, fully remote',
@@ -31,6 +21,16 @@ export const experience: Entry[] = [
     description: {
       en: 'Designed and tested concepts for decentralised applications (dApps) on the open-source gno.land blockchain platform.',
       fr: 'Conception et test de concepts d’applications décentralisées (dApps) sur la plateforme blockchain open source gno.land.',
+    },
+  },
+  {
+    org: 'EPITECH',
+    role: { en: 'Technical assistant', fr: 'Assistante technique, stagiaire' },
+    place: { en: 'Paris, France', fr: 'Paris, France' },
+    period: { en: 'Feb 2024 – Apr 2025', fr: 'Fév. 2024 – Avr 2025' },
+    description: {
+      en: 'Technical assistant for first- and second-year students in C/C++, Haskell and Docker.',
+      fr: 'Assistante technique pour les étudiants de première et deuxième année en C/C++, Haskell et Docker.',
     },
   },
   {

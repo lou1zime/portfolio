@@ -14,7 +14,7 @@
     "toLight": "Passer en mode clair",
     "colorOn": "Activer la couleur",
     "colorOff": "Désactiver la couleur",
-    "more": "+{count} de plus →"
+    "more": "{count} de plus →"
   },
   "home": {
     "status": "Disponible pour un stage de 6 mois à temps plein à partir du 1er mars 2027"

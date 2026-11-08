@@ -14,7 +14,7 @@
     "toLight": "Switch to light mode",
     "colorOn": "Turn on color",
     "colorOff": "Turn off color",
-    "more": "+{count} more →"
+    "more": "{count} more →"
   },
   "home": {
     "status": "Open to a 6-month full-time internship from 1 March 2027"

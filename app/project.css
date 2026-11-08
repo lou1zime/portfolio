@@ -7,7 +7,7 @@
   border-top: 1px solid var(--line);
 }
 .yearLabel {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
   color: var(--fg);
@@ -63,7 +63,7 @@
 /* Project page */
 .page {
   padding: 64px var(--pad);
-  max-width: 1100px;
+  /* max-width: 1100px; */
 }
 .page h1 {
   font-size: clamp(2.2rem, 6vw, 5rem);
@@ -78,8 +78,8 @@
   color: var(--muted);
 }
 .cover {
-  aspect-ratio: 16 / 9;
-  margin: 32px 0;
+  aspect-ratio: 20 / 9;
+  margin: 8px 0;
   overflow: hidden;
 }
 .shot {
@@ -132,7 +132,4 @@ a:focus-visible {
 .links a.projectLink:hover {
   background: var(--fg);
   color: var(--bg);
-}
-.projectLink:hover svg {
-  transform: rotate(-12deg) scale(1.1);
 }

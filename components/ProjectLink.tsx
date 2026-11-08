@@ -1,5 +1,5 @@
 // A pill-shaped link with an icon: the GitHub mark for github.com links, an arrow for anything else.
-// On hover the pill inverts its colors and the icon tilts (styles in app/extras.css).
+// On hover the pill inverts its colors
 type Props = { href: string; label: string };
 
 const isGithub = (href: string) => {
