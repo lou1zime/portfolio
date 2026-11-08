@@ -6,14 +6,13 @@ type Props = {
 };
 
 export default function Loading({
-  src = '/path-to-your-loading.gif',
+  src = '/ATTACHED-FAST-LOOP-ORIG.png',
   alt = 'Loading...',
 }: Props) {
   return (
     <div className="flex items-center justify-center min-h-[50vh] w-full bg-transparent">
       <div className="relative w-16 h-16">
         {' '}
-        {/* Adjust width and height as needed */}
         <Image
           src={src}
           alt={alt}

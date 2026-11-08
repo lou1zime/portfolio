@@ -3,6 +3,7 @@ import SocialLink from '@/components/SocialLink';
 import { site } from '@/content/site';
 import '../../project.css';
 import './about.css';
+import Image from 'next/image';
 
 export default async function About({
   params,

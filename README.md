@@ -45,4 +45,4 @@ npm run dev
 
 - The source code in this repository is licensed under the MIT License.
 
-- The animated GIF (/public/animation.gif) and all custom artwork are © Lou Onezime. All rights reserved. They may not be used commercially, redistributed, or modified without explicit written permission.
+- The animated GIFs and all custom artwork (`/public/ATTACHED*.png` and `/public/CAT*.png`) are © Lou Onezime. All rights reserved. They may not be used commercially, redistributed, or modified without explicit written permission.
