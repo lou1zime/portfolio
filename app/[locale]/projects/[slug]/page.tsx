@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProject, projects, tr } from '@/content/projects';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { Suspense } from 'react';
+import '@/app/project.css';
+import ProjectLink from '@/components/ProjectLink';
+import Loading from '@/components/Loading';
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
 
@@ -17,7 +21,9 @@ export async function generateMetadata({ params }: Params) {
   return { title: getProject(slug)?.title ?? 'Project' };
 }
 
-export default async function ProjectPage({ params }: Params) {
+async function ProjectContent({ params }: Params) {
+  const t = await getTranslations('projects');
+
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
@@ -33,19 +39,30 @@ export default async function ProjectPage({ params }: Params) {
         <span>{p.stack.join(', ')}</span>
       </div>
 
-      <div className="cover">
-        <Image src={p.cover} alt="Cover" width={750} height={200} />
-        {/* <Mosh src={p.cover} config={presets[p.mosh ?? 'subtle']} /> */}
-      </div>
+      {p.cover && (
+        <div className="cover">
+          <Image
+            src={p.cover.src}
+            alt="Cover"
+            width={p.cover.width}
+            height={p.cover.height}
+          />
+        </div>
+      )}
 
-      <p className="prose">{tr(p.description, locale)}</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <h2 className="">{tr(p.summary, locale)}</h2>
+        <p className="prose">{tr(p.description, locale)}</p>
+      </div>
 
       {p.links.length > 0 && (
         <div className="links">
           {p.links.map((l) => (
-            <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
-              {l.label}
-            </a>
+            <ProjectLink
+              key={l.href}
+              href={l.href}
+              label={l.label === 'GitHub' ? t('sourceCode') : l.label}
+            />
           ))}
         </div>
       )}
@@ -58,5 +75,13 @@ export default async function ProjectPage({ params }: Params) {
         ))}
       </div>
     </main>
+  );
+}
+
+export default function ProjectPage({ params }: Params) {
+  return (
+    <Suspense fallback={<Loading />}>
+      <ProjectContent params={params} />
+    </Suspense>
   );
 }

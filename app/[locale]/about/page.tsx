@@ -1,23 +1,39 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import SocialLink from '@/components/SocialLink';
 import { site } from '@/content/site';
+import '../../project.css';
+import './about.css';
 
-export const metadata = { title: 'About' };
+export default async function About({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('about');
 
-export default function About() {
   return (
-    <main className="page">
-      <h1>About</h1>
-      <p className="prose" style={{ marginTop: 24 }}>
-        Fifth-year software engineering student at EPITECH Paris with experience
-        in software development, Rust, open-source projects, and
-        proof-of-concept decentralized applications. Professional experience in
-        France, complemented by an academic exchange year in South Korea.
-        Seeking a backend or general software engineering opportunity.
-      </p>
-      <div className="links">
-        <a href={`mailto:${site.email}`}>Email</a>
-        <a href={'https://www.linkedin.com/in/lou-onezime/'}>LinkedIn</a>
-        <a href={'https://github.com/lou1zime'}>GitHub</a>
+    <main className="page aboutPage">
+      <div>
+        <h1>{t('title')}</h1>
+        <p className="prose" style={{ marginTop: 24 }}>
+          {t('body')}
+        </p>
       </div>
+
+      <ul className="socials">
+        {site.socials.map((s) => (
+          <li key={s.label}>
+            <SocialLink
+              label={s.label}
+              handle={s.handle}
+              href={s.href}
+              scramble="handle"
+            />
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

@@ -91,7 +91,6 @@ export default function LocaleSwitcher({ onOpen }: { onOpen?: () => void }) {
               onClick={() => choose(l)}
             >
               {short(l)}
-              {/* <span>{LANGS[l]?.name}</span> */}
             </button>
           </li>
         ))}
