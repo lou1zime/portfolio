@@ -1,0 +1,143 @@
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.acc {
+  border-bottom: 1px solid var(--line);
+}
+.accItem {
+  border-top: 1px solid var(--line);
+}
+.accHead {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.accBtn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4em;
+  width: 100%;
+  padding: 22px 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.accTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  transition: transform 0.25s;
+}
+.accBtn:hover .accTitle {
+  transform: translateX(8px);
+}
+.accCount {
+  margin-top: 0.4em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* plus that turns into a minus */
+.accIcon {
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-left: auto;
+  align-self: center;
+}
+.accIcon::before,
+.accIcon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: currentColor;
+  transition: transform 0.3s;
+}
+.accIcon::after {
+  transform: rotate(90deg);
+}
+.accBtn[aria-expanded='true'] .accIcon::after {
+  transform: rotate(0deg);
+}
+
+/* open/close by animating the row height from 0fr to 1fr */
+.accPanel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.accPanel.open {
+  grid-template-rows: 1fr;
+}
+.accInner {
+  min-height: 0;
+  overflow: hidden;
+}
+.accPanel.open .accInner {
+  padding-bottom: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accPanel,
+  .accIcon::before,
+  .accIcon::after,
+  .accTitle {
+    transition: none;
+  }
+}
+
+.timelineSection {
+  margin-top: 64px;
+}
+.timelineHeading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.timelineRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 18rem) 1fr;
+  gap: 8px 24px;
+  padding: 16px 0 24px;
+  border-top: 1px solid var(--line);
+}
+.timelinePeriod {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  color: var(--fg);
+}
+.timelineTitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.timelineRole {
+  margin-top: 4px;
+}
+.timelineText {
+  margin-top: 8px;
+  color: var(--muted);
+}
+@media (max-width: 760px) {
+  .timelineRow {
+    grid-template-columns: 1fr;
+  }
+}

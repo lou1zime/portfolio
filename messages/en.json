@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "tagline": "Developer"
+  },
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "experience": "Experience →",
+    "education": "Education →",
+    "allWork": "All work",
+    "language": "Language",
+    "toDark": "Switch to dark mode",
+    "toLight": "Switch to light mode",
+    "colorOn": "Turn on color",
+    "colorOff": "Turn off color",
+    "more": "{count} more →"
+  },
+  "home": {
+    "status": "Open to a 6-month full-time internship from 1 March 2027"
+  },
+  "work": {
+    "title": "Work",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "switch": "Choose a list"
+  },
+  "projects": {
+    "title": "All work",
+    "role": "Role",
+    "stack": "Stack",
+    "sourceCode": "Source code"
+  },
+  "about": {
+    "title": "About",
+    "body": "Fifth-year software engineering student at EPITECH Paris with experience in software development, Rust, open-source projects, and proof-of-concept decentralized applications. Professional experience in France, complemented by an academic exchange year in South Korea. Seeking a backend or general software engineering opportunity.",
+    "email": "Email",
+    "experience": "Experience",
+    "education": "Education"
+  }
+}

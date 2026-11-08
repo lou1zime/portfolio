@@ -1,0 +1,123 @@
+/* Projects */
+.yearGroup {
+  display: grid;
+  grid-template-columns: minmax(5rem, 12rem) 1fr; /* year -> projects */
+  gap: 8px 24px;
+  padding: 16px 0 24px;
+  border-top: 1px solid var(--line);
+}
+.yearLabel {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--fg);
+}
+.yearProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.projectRow {
+  display: grid;
+  gap: 2px;
+  transition: padding-left 0.25s;
+}
+.projectTitle {
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+.projectSummary {
+  color: var(--accent, var(--muted));
+}
+
+@media (max-width: 760px) {
+  .yearGroup {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectTitle::before,
+.projectTitle::after {
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  display: inline-block;
+}
+
+.projectTitle::before {
+  content: '(';
+}
+
+.projectTitle::after {
+  content: ') ★';
+}
+
+.projectRow:hover .projectTitle::before,
+.projectRow:hover .projectTitle::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Project page */
+.meta {
+  margin: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  color: var(--muted);
+}
+.cover {
+  aspect-ratio: 20 / 9;
+  margin: 8px 0;
+  overflow: hidden;
+}
+.shot {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 16px;
+}
+.links {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+.links a {
+  border-bottom: 1px solid var(--muted);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+.links a.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.projectLink svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.25s;
+}
+.projectLink svg.arrow {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.links a.projectLink:hover {
+  background: var(--fg);
+  color: var(--bg);
+}

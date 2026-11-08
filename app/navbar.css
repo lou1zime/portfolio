@@ -1,0 +1,431 @@
+.navBar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 64px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  padding: 0 var(--pad);
+  background: var(--nav-bg, var(--bg));
+  color: var(--nav-fg, var(--fg));
+}
+.navLinks {
+  display: contents;
+}
+
+.navItem {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  width: fit-content;
+}
+.navLogo {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+.navWork {
+  grid-column: 4 / 7;
+  grid-row: 1;
+}
+.navAbout {
+  grid-column: 7 / 9;
+  grid-row: 1;
+}
+
+.navCount {
+  font-size: 0.6em;
+  font-weight: 700;
+  margin-left: 0.35em;
+  vertical-align: top;
+  position: relative;
+  top: -0.2em;
+}
+
+/* real text reserves the width, scrambled text is drawn on top */
+.navWord {
+  display: inline-grid;
+}
+.navWord > * {
+  grid-area: 1 / 1;
+}
+.navSizer {
+  visibility: hidden;
+}
+
+.navActive .navLive {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+.navItem:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 6px;
+}
+
+.navPanel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 8px var(--pad) 32px;
+  background: var(--nav-bg, var(--bg));
+  border-bottom: 1px solid var(--line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    visibility 0s linear 0.2s;
+}
+.navPanel.open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.navList {
+  grid-column: 5 / 9;
+  display: flex;
+  flex-direction: column;
+}
+.navProject {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+.navProject span:last-child {
+  font-weight: 400;
+}
+.navProject:hover,
+.navProject.on {
+  color: var(--fg);
+}
+.navAll {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--muted);
+}
+.navAll:hover {
+  color: var(--fg);
+}
+
+.navPreview {
+  grid-column: 9 / 13;
+  margin-left: var(--pad);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  background: var(--line);
+}
+.navPreview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.navPreview img.on {
+  opacity: 1;
+}
+
+/* hover previews make no sense on touch screens or narrow phones */
+@media (hover: none), (max-width: 760px) {
+  .navPanel {
+    display: none;
+  }
+}
+
+.navTools {
+  grid-column: 11 / 13;
+  grid-row: 1;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ---- language dropdown ---- */
+.navLangWrap {
+  position: relative;
+}
+
+.navLang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.navCaret {
+  transition: transform 0.2s;
+}
+.navLang[aria-expanded='true'] .navCaret {
+  transform: rotate(180deg);
+}
+
+.navLangMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 3rem;
+  list-style: none;
+  padding: 6px 0;
+  background: var(--nav-bg, var(--bg));
+  border: 1px solid var(--line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.15s,
+    transform 0.15s,
+    visibility 0s linear 0.15s;
+}
+.navLangMenu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.navLangMenu button {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 8px 14px;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+}
+.navLangMenu button span {
+  font-weight: 400;
+}
+.navLangMenu button:hover,
+.navLangMenu button[aria-current='true'] {
+  color: var(--fg);
+}
+
+/* ---- dark / light toggle ---- */
+.navTheme {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+.navTheme svg {
+  transition: transform 0.4s;
+}
+:root[data-theme='dark'] .navTheme svg {
+  transform: rotate(180deg);
+}
+
+/* ---- color bucket ---- */
+.navPalette {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: 0;
+  padding: 4px; /* bigger click area ... */
+  margin: -4px; /* ... without moving anything */
+  color: inherit;
+  cursor: pointer;
+  /* the drop: the colour you'd get (purple in dark mode, yellow in light mode) */
+  --drop: var(--yellow);
+}
+:root[data-theme='dark'] .navPalette {
+  --drop: var(--purple);
+}
+:root[data-palette='color'] .navPalette {
+  --drop: currentColor;
+}
+
+.bucketDrop {
+  fill: var(--drop);
+  transition: fill 0.3s;
+}
+
+/* tilt, with a tiny overshoot */
+.bucketTilt {
+  transform-origin: 8px 9px;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+:root[data-palette='color'] .navPalette .bucketTilt {
+  transform: rotate(-16deg);
+}
+
+/* paint rises into the bucket */
+.bucketPaint {
+  transform: translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-palette='color'] .navPalette .bucketPaint {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bucketTilt,
+  .bucketPaint,
+  .bucketDrop {
+    transition: none;
+  }
+}
+
+/* ---- small screens: two rows ----
+   row 1: LO on the left, language / color / theme on the right
+   row 2: Work, About, Contact */
+@media (max-width: 900px) {
+  .navBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: auto;
+    min-height: 64px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    row-gap: 10px;
+  }
+  .navLogo {
+    order: 1;
+  }
+  .navTools {
+    order: 2;
+    margin-left: auto;
+    gap: 14px;
+  }
+  .navLinks {
+    order: 3;
+    display: flex;
+    flex-basis: 100%;
+    gap: 24px;
+  }
+}
+
+.navCols {
+  grid-column: 4 / 13; /* starts under the Work link */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 32px;
+}
+.navColHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3em;
+  padding: 12px 0 10px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.navColHead sup {
+  font-size: 0.65em;
+  color: var(--muted);
+}
+.navCol ul {
+  display: flex;
+  flex-direction: column;
+}
+.navColItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  color: var(--muted);
+  transition:
+    color 0.15s,
+    padding-left 0.2s;
+}
+.navColItem:hover {
+  color: var(--fg);
+  padding-left: 6px;
+}
+
+/* compact version: just three big labels, no lists (SHOW_ITEMS = false in Navbar.tsx) */
+.navCols.compact .navColHead {
+  margin: 0;
+  padding: 14px 0 18px;
+  border-bottom: 0;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  transition: padding-left 0.2s;
+}
+.navCols.compact .navColHead sup {
+  font-size: 0.45em;
+}
+.navCols.compact .navColHead:hover {
+  padding-left: 8px;
+}
+
+/* "7 more →" line at the end of a column */
+.navColItem.navMore {
+  margin-top: 4px;
+  color: var(--fg);
+  font-weight: 700;
+}
+.navColItem.navMore:hover {
+  padding-left: 6px;
+}
+
+.navDrop {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.navDrop > ul {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.navCol.hasPreview:hover .navDrop,
+.navCol.hasPreview:focus-within .navDrop {
+  grid-template-rows: 1fr;
+}
+
+/* big text, like the labels */
+.navDrop .navColItem {
+  padding: 6px 0;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.navDrop .navColItem:first-child {
+  margin-top: 0;
+}
+.navMeta {
+  flex: none;
+  align-self: center;
+  font-size: 0.7em;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navDrop {
+    transition: none;
+  }
+}
