@@ -1,4 +1,3 @@
-/* About page: text at the top, big links pinned to the bottom of the screen */
 .aboutPage {
   max-width: none;
   min-height: calc(100svh - 64px);

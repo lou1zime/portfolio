@@ -1,6 +1,6 @@
 .yearGroup {
   display: grid;
-  grid-template-columns: minmax(5rem, 12rem) 1fr; /* year | projects */
+  grid-template-columns: minmax(5rem, 12rem) 1fr; /* year -> projects */
   gap: 8px 24px;
   padding: 16px 0 24px;
   border-top: 1px solid var(--line);
@@ -53,9 +53,52 @@
   content: ') ★';
 }
 
-/* When hovering anywhere on the project row, trigger the animation on the title */
 .projectRow:hover .projectTitle::before,
 .projectRow:hover .projectTitle::after {
   opacity: 1;
   transform: scale(1);
+}
+
+/* Project page */
+.page {
+  padding: 64px var(--pad);
+  max-width: 1100px;
+}
+.page h1 {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.meta {
+  margin: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  color: var(--muted);
+}
+.cover {
+  aspect-ratio: 16 / 9;
+  margin: 32px 0;
+  overflow: hidden;
+}
+.shot {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 16px;
+}
+.prose {
+  max-width: 62ch;
+}
+.links {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+.links a {
+  border-bottom: 1px solid var(--muted);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
 }
