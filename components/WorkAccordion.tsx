@@ -12,8 +12,6 @@ type Props = {
   panels: Record<WorkKey, ReactNode>; // the three lists, rendered on the server
 };
 
-// Three big rows that are always visible: Projects, Experience, Education.
-// Click a row to open its list (one open at a time) and click again to close it.
 export default function WorkAccordion({
   initial,
   labels,

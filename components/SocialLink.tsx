@@ -28,7 +28,6 @@ export default function SocialLink({
 }: Props) {
   const full = label + handle;
 
-  // Initialize state based on touch capability upfront during render (avoids useEffect setState)
   const [text, setText] = useState(() => {
     if (
       typeof window !== 'undefined' &&
@@ -39,7 +38,6 @@ export default function SocialLink({
     return label;
   });
 
-  // Clean ternary initialization for the ref (avoids IIFE parsing errors)
   const shown = useRef(
     typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches
       ? full

@@ -2,7 +2,6 @@ import { useLocale } from 'next-intl';
 import { tr } from '@/content/projects';
 import type { Entry } from '@/content/experience';
 
-// A list of dated entries: period on the left, details on the right, a line between entries.
 export default function Timeline({ entries }: { entries: Entry[] }) {
   const locale = useLocale();
 

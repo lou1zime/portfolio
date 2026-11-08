@@ -8,7 +8,6 @@ export type Entry = {
   description?: Localized;
 };
 
-// Newest first. Edit the text here; the About page picks it up.
 export const experience: Entry[] = [
   {
     org: 'All In Bits (gno.land, New Tendermint)',
