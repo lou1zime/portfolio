@@ -86,8 +86,8 @@ export default function Navbar() {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               key={p.slug}
-              src={p.cover}
-              alt=""
+              src={p.cover.src}
+              alt="cover"
               className={i === index ? 'on' : ''}
               onError={(e) => (e.currentTarget.style.display = 'none')}
             />

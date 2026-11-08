@@ -13,9 +13,6 @@
     "colorOn": "Turn on color",
     "colorOff": "Turn off color"
   },
-  "home": {
-    "selectedWork": "Selected work"
-  },
   "projects": {
     "title": "All work",
     "role": "Role",
@@ -23,7 +20,7 @@
   },
   "about": {
     "title": "About",
-    "body": "Write a few honest sentences here: who you are, what you build, what you want to do next.",
+    "body": "Fifth-year software engineering student at EPITECH Paris with experience in software development, Rust, open-source projects, and proof-of-concept decentralized applications. Professional experience in France, complemented by an academic exchange year in South Korea. Seeking a backend or general software engineering opportunity.",
     "email": "Email"
   }
 }

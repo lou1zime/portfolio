@@ -13,9 +13,6 @@
     "colorOn": "Activer la couleur",
     "colorOff": "Désactiver la couleur"
   },
-  "home": {
-    "selectedWork": "Projets sélectionnés"
-  },
   "projects": {
     "title": "Tous les projets",
     "role": "Rôle",
@@ -23,7 +20,7 @@
   },
   "about": {
     "title": "À propos",
-    "body": "Écris ici quelques phrases sincères : qui tu es, ce que tu construis, ce que tu veux faire ensuite.",
+    "body": "Étudiante en 5e année à EPITECH Paris, avec une expérience en développement logiciel, programmation en Rust, contribution à des projets open source et conception de prototypes d'applications décentralisées. Expérience en environnement professionnel en France, complétée par une année d'échange universitaire en Corée du Sud. Recherche une opportunité en développement backend ou logiciel.",
     "email": "E-mail"
   }
 }

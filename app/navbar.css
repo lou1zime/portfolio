@@ -1,5 +1,3 @@
-/* Navbar styles: imported in app/[locale]/layout.tsx. Edit here, not in globals.css. */
-
 .navBar {
   position: sticky;
   top: 0;
@@ -128,7 +126,6 @@
   aspect-ratio: 4 / 3;
   position: relative;
   overflow: hidden;
-  background: var(--line);
 }
 .navPreview img {
   position: absolute;
@@ -251,8 +248,8 @@
   align-items: center;
   background: none;
   border: 0;
-  padding: 4px; /* bigger click area ... */
-  margin: -4px; /* ... without moving anything */
+  padding: 4px; /* bigger click area */
+  margin: -4px; /* without moving anything */
   color: inherit;
   cursor: pointer;
   /* the drop: the colour you'd get (purple in dark mode, yellow in light mode) */

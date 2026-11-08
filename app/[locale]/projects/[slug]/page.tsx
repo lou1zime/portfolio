@@ -35,7 +35,12 @@ async function ProjectContent({ params }: Params) {
       </div>
 
       <div className="cover">
-        <Image src={p.cover} alt="Cover" width={750} height={200} />
+        <Image
+          src={p.cover.src}
+          alt="Cover"
+          width={p.cover.width}
+          height={p.cover.height}
+        />
       </div>
 
       <p className="prose">{tr(p.description, locale)}</p>
