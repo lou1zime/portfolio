@@ -112,20 +112,16 @@
 }
 .timelineRow {
   display: grid;
-  grid-template-columns: minmax(8rem, 18rem) 1fr;
+  grid-template-columns: minmax(8rem, 14rem) 1fr;
   gap: 8px 24px;
-  padding: 16px 0 24px;
+  padding: 16px 0 20px;
   border-top: 1px solid var(--line);
 }
 .timelinePeriod {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.03rem;
-  color: var(--fg);
+  color: var(--muted);
 }
 .timelineTitle {
   font-size: 1.4rem;
-  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.2;
 }
@@ -135,9 +131,30 @@
 .timelineText {
   margin-top: 8px;
   color: var(--muted);
+  max-width: 62ch;
 }
 @media (max-width: 760px) {
   .timelineRow {
     grid-template-columns: 1fr;
   }
+}
+
+.timelineRelated {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.timelineLink {
+  display: inline-flex;
+  color: var(--fg);
+  font-weight: 700;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.2s;
+}
+.timelineLink:hover {
+  border-color: var(--fg);
 }

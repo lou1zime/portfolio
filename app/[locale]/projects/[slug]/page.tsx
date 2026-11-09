@@ -4,7 +4,7 @@ import { getProject, projects, tr } from '@/content/projects';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Suspense } from 'react';
-import '@/app/project.css';
+import '../project.css';
 import ProjectLink from '@/components/ProjectLink';
 import Loading from '@/components/Loading';
 

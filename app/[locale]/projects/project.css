@@ -51,7 +51,7 @@
 }
 
 .projectTitle::after {
-  content: ') ★';
+  content: ')';
 }
 
 .projectRow:hover .projectTitle::before,

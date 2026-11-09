@@ -6,7 +6,7 @@ type Props = {
 };
 
 export default function Loading({
-  src = '/ATTACHED-Y-FAST-LOOP.webp',
+  src = '/ATTACHED-Y-FAST-LOOP-COMPRESSED.webp',
   alt = '...',
 }: Props) {
   return (
