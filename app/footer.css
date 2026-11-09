@@ -1,5 +1,9 @@
 .siteFooter {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   min-height: 35px; /* the closed strip */
   background: var(--fg);
   color: var(--bg);

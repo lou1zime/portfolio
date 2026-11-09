@@ -19,9 +19,11 @@ async function Home({ params }: Params) {
       </section>
       <section className="sectionHome">
         <CursorDoodle />
-        <a className="details" href={`mailto:${site.email}`}>
-          {t('status')}
-        </a>
+        <div className="details">
+          <a className="status" href={`mailto:${site.email}`}>
+            {t('status')}
+          </a>
+        </div>
       </section>
     </main>
   );
