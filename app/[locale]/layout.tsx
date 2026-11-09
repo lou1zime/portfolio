@@ -6,9 +6,11 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import { routing } from '@/i18n/routing';
 import { site } from '@/content/site';
+import { cookies } from 'next/headers';
+import SiteFooter from '@/components/SiteFooter';
 import '../globals.css';
 import '../navbar.css';
-import { cookies } from 'next/headers';
+import '../footer.css';
 
 export const instant = false;
 
@@ -73,6 +75,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider>
           <Navbar initialPalette={initialPalette} initialTheme={initialTheme} />
           {children}
+          <SiteFooter />
         </NextIntlClientProvider>
       </body>
     </html>

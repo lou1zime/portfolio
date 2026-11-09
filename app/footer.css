@@ -1,0 +1,111 @@
+.siteFooter {
+  position: relative;
+  min-height: 35px; /* the closed strip */
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* the character stands on the top edge, bottom-right */
+.charBtn {
+  position: absolute;
+  right: var(--pad);
+  bottom: calc(100% - 6px);
+  z-index: 5;
+  padding: 0;
+  background: none;
+  border: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+.charBtn:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+/* the sprite sheet: all frames side by side; we slide it left, one frame per step */
+.char {
+  display: block;
+  width: var(--cw);
+  height: var(--ch);
+  background-image: var(--sprite);
+  background-repeat: no-repeat;
+  background-size: calc(var(--cw) * var(--frames)) var(--ch);
+  background-position: 0 0;
+}
+/* plays once and freezes on the last frame; removing .play snaps back to frame 1 */
+.char.play {
+  animation: charPlay var(--dur) steps(var(--frames), jump-none) forwards;
+}
+@keyframes charPlay {
+  to {
+    background-position-x: calc(var(--cw) * (1 - var(--frames)));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .char.play {
+    animation: none;
+    background-position-x: calc(var(--cw) * (1 - var(--frames)));
+  }
+}
+
+/* the links slide open */
+.footBody {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.siteFooter.open .footBody {
+  grid-template-rows: 1fr;
+}
+.footInner {
+  min-height: 0;
+  overflow: hidden;
+}
+.footLinks {
+  display: flex;
+  flex-direction: column;
+  padding: 22px var(--pad) 28px;
+}
+.footLink {
+  display: inline-block;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-transform: lowercase;
+  overflow-wrap: anywhere;
+}
+.footLink .socialHandle {
+  color: inherit;
+  opacity: 0.6;
+}
+.footLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footBody {
+    transition: none;
+  }
+}
+
+.socials {
+  border-bottom: 0px solid var(--line);
+}
+
+.socialLink {
+  display: block;
+  padding: 14px 0 10px;
+  border-top: 0px solid var(--line);
+  font-size: clamp(2.2rem, 4vw, 2rem); /* as big as a page title */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.7;
+  overflow-wrap: anywhere;
+}
+
+/* the revealed part, e.g. "/lou-onezime" */
+.socialHandle {
+  color: var(--muted);
+}

@@ -1,7 +1,4 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import SocialLink from '@/components/SocialLink';
-import { site } from '@/content/site';
-import '../../project.css';
 import './about.css';
 
 export default async function About({
@@ -21,19 +18,6 @@ export default async function About({
           {t('body')}
         </p>
       </div>
-
-      <ul className="socials">
-        {site.socials.map((s) => (
-          <li key={s.label}>
-            <SocialLink
-              label={s.label}
-              handle={s.handle}
-              href={s.href}
-              scramble="handle"
-            />
-          </li>
-        ))}
-      </ul>
     </main>
   );
 }

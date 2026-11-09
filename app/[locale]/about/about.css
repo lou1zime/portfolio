@@ -1,28 +1,8 @@
 .aboutPage {
   max-width: none;
-  min-height: calc(100svh - 64px);
+  min-height: calc(100svh - var(--header-height));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 64px;
-}
-
-.socials {
-  border-bottom: 0px solid var(--line);
-}
-
-.socialLink {
-  display: block;
-  padding: 14px 0 10px;
-  border-top: 0px solid var(--line);
-  font-size: clamp(2.2rem, 4vw, 2rem); /* as big as a page title */
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.7;
-  overflow-wrap: anywhere;
-}
-
-/* the revealed part, e.g. "/lou-onezime" */
-.socialHandle {
-  color: var(--muted);
 }

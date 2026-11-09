@@ -4,9 +4,9 @@ import Timeline from '@/components/Timeline';
 import WorkAccordion, { type WorkKey } from '@/components/WorkAccordion';
 import { education, experience } from '@/content/experience';
 import { projects } from '@/content/projects';
-import './work.css';
 import { Suspense } from 'react';
 import Loading from '@/components/Loading';
+import './work.css';
 
 type Props = {
   params: Promise<{ locale: string }>;
