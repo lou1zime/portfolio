@@ -32,8 +32,8 @@ export const projects: Project[] = [
       fr: 'Un portfolio d’ingénierie personnel multilingue.',
     },
     description: {
-      en: 'A high-performance, multilingual personal engineering portfolio built with Next.js 16 App Router, React 19, and Tailwind CSS v4. It features fluid GSAP animations, custom theme toggles, and seamless internationalization routing.',
-      fr: 'Un portfolio d’ingénierie personnel multilingue et haute performance construit avec Next.js 16 App Router, React 19 et Tailwind CSS v4. Il intègre des animations GSAP fluides, des thèmes personnalisés et un routage internationalisé.',
+      en: 'A multilingual personal engineering portfolio built with Next.js 16 App Router, React 19, and Tailwind CSS v4. It features fluid GSAP animations, custom theme toggles, and seamless internationalization routing.',
+      fr: 'Un portfolio d’ingénierie personnel multilingue construit avec Next.js 16 App Router, React 19 et Tailwind CSS v4. Il intègre des animations GSAP fluides, des thèmes personnalisés et un routage internationalisé.',
     },
     stack: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'GSAP'],
     cover: null,
