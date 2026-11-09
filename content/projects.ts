@@ -16,10 +16,30 @@ export type Project = {
   cover: { src: string; width: number; height: number } | null; // path under /public
   images: string[]; // extra images on the project page
   links: { label: string; href: string }[];
+  inProgress: boolean;
 };
 
 export const projects: Project[] = [
   // ---------- 2026 ----------
+  {
+    slug: 'portfolio',
+    title: 'Portfolio',
+    year: '2026',
+    role: { en: 'Solo', fr: 'En solo' },
+    summary: {
+      en: 'A multilingual personal engineering portfolio.',
+      fr: 'Un portfolio d’ingénierie personnel multilingue.',
+    },
+    description: {
+      en: 'A high-performance, multilingual personal engineering portfolio built with Next.js 16 App Router, React 19, and Tailwind CSS v4. It features fluid GSAP animations, custom theme toggles, and seamless internationalization routing.',
+      fr: 'Un portfolio d’ingénierie personnel multilingue et haute performance construit avec Next.js 16 App Router, React 19 et Tailwind CSS v4. Il intègre des animations GSAP fluides, des thèmes personnalisés et un routage internationalisé.',
+    },
+    stack: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'GSAP'],
+    cover: null,
+    images: [],
+    links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/portfolio' }],
+    inProgress: true,
+  },
   {
     slug: 'yoga-studio-app',
     title: 'Banteay',
@@ -35,12 +55,11 @@ export const projects: Project[] = [
     },
     stack: ['Next.js', 'Prisma', 'PostgreSQL', 'TypeScript'],
     cover: null,
-    // cover: { src: '/projects/covers/banteay.png', width: 400, height: 400 },
-    // images: ['/projects/covers/banteay.png'],
     images: [],
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/banteay-class' },
     ],
+    inProgress: true,
   },
   {
     slug: 'play-sync',
@@ -48,50 +67,19 @@ export const projects: Project[] = [
     year: '2025',
     role: { en: 'Personal project', fr: 'Projet personnel' },
     summary: {
-      en: 'A real-time synchronization tool for media or playback.',
-      fr: 'Un outil de synchronisation en temps réel pour les médias ou la lecture.',
+      en: 'A music synchronization tool with a unified UI to transfer tracks between streaming services via OAuth2.',
+      fr: 'Un outil de synchronisation musicale avec une interface unifiée pour transférer des morceaux entre services via OAuth2.',
     },
     description: {
-      en: 'A real-time synchronization application designed to coordinate media playback or state sharing across multiple clients.',
-      fr: 'Une application de synchronisation en temps réel conçue pour coordonner la lecture multimédia ou le partage d’état entre plusieurs clients.',
+      en: 'An application written in Go providing a unified interface for music streaming services, allowing users to mutually sync data and transfer music playlists between platforms using OAuth2.',
+      fr: 'Une application écrite en Go offrant une interface unifiée pour les services de streaming musical, permettant de synchroniser des données et de transférer de la musique entre plateformes via OAuth2.',
     },
-    stack: ['TypeScript', 'Node.js', 'WebSockets'],
+    stack: ['Go'],
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/play-sync' }],
+    inProgress: true,
   },
-  // {
-  //   // remove?
-  //   slug: 'legacy-todo',
-  //   title: 'legacy',
-  //   year: '2026',
-  //   role: { en: 'EPITECH project', fr: 'Projet EPITECH' },
-  //   summary: {
-  //     en: 'Metrics and dashboards for an Express and BullMQ app, all running in Docker.',
-  //     fr: 'Métriques et tableaux de bord pour une application Express et BullMQ, le tout dans Docker.',
-  //   },
-  //   description: {
-  //     en: 'A school project built around an event-driven todo app: an Express API, a Redis-backed BullMQ queue for notifications, a separate worker and a MySQL database. We added observability to it, with metrics exposed to Prometheus and a Grafana dashboard, everything running in Docker Compose, and wrote an architecture decision record explaining the choices.',
-  //     fr: 'Un projet d’école autour d’une application de todo pilotée par les événements : une API Express, une file BullMQ sur Redis pour les notifications, un worker séparé et une base MySQL. J’y ai ajouté de l’observabilité, avec des métriques exposées à Prometheus et un tableau de bord Grafana, le tout dans Docker Compose, et j’ai rédigé un ADR qui explique les choix.',
-  //   },
-  //   stack: [
-  //     'Node.js',
-  //     'Express',
-  //     'BullMQ',
-  //     'Redis',
-  //     'MySQL',
-  //     'Prometheus',
-  //     'Grafana',
-  //     'Docker',
-  //   ],
-  //   cover: {
-  //     src: '/projects/covers/observability.jpg',
-  //     width: 500,
-  //     height: 500,
-  //   },
-  //   images: [],
-  //   links: [],
-  // },
 
   // ---------- 2025 ----------
   {
@@ -111,6 +99,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/area' }],
+    inProgress: false,
   },
   {
     slug: 'gnoland-dapps',
@@ -137,6 +126,7 @@ export const projects: Project[] = [
         href: 'https://github.com/gnolang/gno/pulls?q=is%3Apr+state%3Aclosed+author%3Alou1zime',
       },
     ],
+    inProgress: false,
   },
 
   // ---------- 2024 ----------
@@ -163,6 +153,7 @@ export const projects: Project[] = [
         href: 'https://zhifters-organization.gitbook.io/maryl',
       },
     ],
+    inProgress: false,
   },
   {
     slug: 'zappy',
@@ -181,6 +172,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/MartinFillon/Zappy' }],
+    inProgress: false,
   },
   {
     slug: 'bruteforce',
@@ -188,12 +180,12 @@ export const projects: Project[] = [
     year: '2024',
     role: { en: 'R&D developer', fr: 'Développeuse R&D' },
     summary: {
-      en: 'An open-source Go project built at PoC Innovation.',
-      fr: 'Un projet open source en Go réalisé à PoC Innovation.',
+      en: 'A Go-based bruteforcer using advanced wordlists for web server reconnaissance.',
+      fr: 'Un outil de bruteforce en Go utilisant des wordlists avancées pour la reconnaissance de serveurs web.',
     },
     description: {
-      en: 'Built as a member of PoC Innovation, EPITECH’s R&D lab, as part of its open-source work. Written in Go.',
-      fr: 'Réalisé en tant que membre de PoC Innovation, le laboratoire R&D d’EPITECH, dans le cadre de ses projets open source. Écrit en Go.',
+      en: 'Developed as a member of PoC Innovation, EPITECH’s R&D lab. A Go application built to perform advanced server reconnaissance and security testing using customized wordlists.',
+      fr: 'Réalisé au sein de PoC Innovation, le lab R&D d’EPITECH. Une application en Go conçue pour effectuer des tests de reconnaissance et de sécurité sur des serveurs web à l’aide de wordlists avancées.',
     },
     stack: ['Go'],
     cover: null,
@@ -201,19 +193,20 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/PoCInnovation/BruteForce' },
     ],
+    inProgress: false,
   },
   {
     slug: 'workshop-rust',
     title: 'Workshop Rust',
     year: '2024',
-    role: { en: 'ASTEK workshop', fr: "Workshop entant qu'ASTEK" },
+    role: { en: 'ASTEK workshop', fr: "Workshop en tant qu'ASTEK" },
     summary: {
-      en: 'This workshop serves as a personal collection exercises or learning materials focused on the Rust programming language.',
-      fr: "Cette atelier est une collectio d'exercices ou de supports d'apprentissage axés sur le langage de programmation Rust.",
+      en: 'Exercises and learning materials focused on the Rust programming language.',
+      fr: "Exercices et supports d'apprentissage axés sur le langage de programmation Rust.",
     },
     description: {
-      en: 'GitHub repository structured as "workshop" containing step-by-step code examples, small projects, or exercises designed for learning systems programming concepts in Rust (such as ownership, borrowing, lifetimes, pattern matching, and cargo configuration).',
-      fr: "Dépôt GitHub structuré sous forme d'« atelier » (workshop) contient généralement des exemples de code progressifs, de petits projets ou des exercices conçus pour assimiler les concepts de programmation système de Rust (comme l'ownership, le borrowing, les durées de vie, le filtrage par motif et la configuration de Cargo).",
+      en: 'GitHub repository structured as a workshop containing step-by-step code examples and exercises designed for learning systems programming concepts in Rust (such as ownership, borrowing, lifetimes, and pattern matching).',
+      fr: "Dépôt GitHub structuré sous forme d'atelier contenant des exemples de code progressifs et des exercices conçus pour assimiler les concepts de programmation système de Rust (comme l'ownership, le borrowing et les durées de vie).",
     },
     stack: ['Rust'],
     cover: null,
@@ -224,64 +217,68 @@ export const projects: Project[] = [
         href: 'https://github.com/MartinFillon/Workshop-rust',
       },
     ],
+    inProgress: false,
   },
   {
     slug: 'feed-the-beast',
     title: 'Feed the Beast',
     year: '2024',
-    role: { en: 'Personal project', fr: 'Projet personnel' },
+    role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
     summary: {
-      en: 'A utility or tracker for managing game resources and progression.',
-      fr: 'Un outil utilitaire pour la gestion des ressources de jeu et de la progression.',
+      en: 'A custom recode of the strace system call tracer written in C.',
+      fr: 'Un recodage personnalisé du traceur d’appels système strace en C.',
     },
     description: {
-      en: 'A personal project focused on tracking and organizing resources, automation, or gameplay mechanics.',
-      fr: 'Un projet personnel axé sur le suivi et l’organisation de ressources, l’automatisation ou les mécaniques de jeu.',
+      en: 'An EPITECH team project built in a group of two, consisting of a custom recode of the system call tracer strace written in C.',
+      fr: 'Un projet d’équipe EPITECH réalisé en binôme, consistant à recoder l’outil de traçage d’appels système strace en C.',
     },
-    stack: ['TypeScript', 'React'],
+    stack: ['C'],
     cover: null,
     images: [],
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/feed-the-beast' },
     ],
+    inProgress: false,
   },
   {
     slug: 'pandoc',
     title: 'Pandoc Tools',
     year: '2024',
-    role: { en: 'Personal project', fr: 'Projet personnel' },
+    role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
     summary: {
-      en: 'Custom filters and tooling extensions for Pandoc document conversion.',
-      fr: 'Filtres personnalisés et outils d’extension pour la conversion de documents Pandoc.',
+      en: 'A document conversion pipeline from Markdown to XML and JSON in Haskell.',
+      fr: 'Un flux de conversion de documents de Markdown vers XML et JSON en Haskell.',
     },
     description: {
-      en: 'A collection of custom scripts and filters designed to streamline document generation, formatting, and conversion workflows using Pandoc.',
-      fr: 'Une collection de scripts et filtres personnalisés conçus pour rationaliser les flux de génération, de formatage et de conversion de documents avec Pandoc.',
+      en: 'An EPITECH project designed to handle document conversion pipelines from Markdown to XML and JSON, written entirely in Haskell.',
+      fr: 'Un projet EPITECH conçu pour gérer des flux de conversion de documents de Markdown vers XML et JSON, entièrement écrit en Haskell.',
     },
-    stack: ['Python', 'Lua'],
+    stack: ['Haskell'],
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/pandoc' }],
+    inProgress: false,
   },
   {
     slug: 'choco-bueno',
     title: 'Choco Bueno',
     year: '2024',
-    role: { en: 'Personal project', fr: 'Projet personnel' },
+    role: { en: 'EPITECH project', fr: 'Projet EPITECH' },
     summary: {
-      en: 'A fun full-stack web application with an interactive interface.',
-      fr: 'Une application web full-stack ludique dotée d’une interface interactive.',
+      en: 'Originally called Chocolatine, an EPITECH project for learning DevOps and GitHub Actions.',
+      fr: 'Initialement appelé Chocolatine, un projet EPITECH pour apprendre le DevOps et GitHub Actions.',
     },
     description: {
-      en: 'A playful full-stack project exploring modern web technologies, smooth UI interactions, and clean architecture.',
-      fr: 'Un projet full-stack ludique explorant les technologies web modernes, les interactions d’interface fluides et une architecture propre.',
+      en: 'An EPITECH project originally named Chocolatine, created to learn DevOps workflows, CI/CD pipelines, and GitHub Actions automation.',
+      fr: 'Un projet EPITECH initialement nommé Chocolatine, créé pour apprendre les flux DevOps, les pipelines CI/CD et les automatisations GitHub Actions.',
     },
-    stack: ['TypeScript', 'React', 'TailwindCSS'],
+    stack: ['GitHub Actions', 'DevOps'],
     cover: null,
     images: [],
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/choco-bueno' },
     ],
+    inProgress: false,
   },
 
   // ---------- 2023 ----------
@@ -302,6 +299,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [],
+    inProgress: false,
   },
   {
     slug: 'corewar',
@@ -322,6 +320,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/MartinFillon/Corewar' },
     ],
+    inProgress: false,
   },
   {
     slug: '42zsh',
@@ -340,6 +339,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/MartinFillon/42zsh' }],
+    inProgress: false,
   },
   {
     slug: 'shakshuka',
@@ -347,23 +347,24 @@ export const projects: Project[] = [
     year: '2023',
     role: { en: 'Personal project', fr: 'Projet personnel' },
     summary: {
-      en: 'A cozy web application or tool built with modern full-stack practices.',
-      fr: 'Une application web conviviale construite avec des pratiques full-stack modernes.',
+      en: 'A web server project written in Rust, inspired by Rouille.',
+      fr: 'Un projet de serveur web écrit en Rust, inspiré de Rouille.',
     },
     description: {
-      en: 'A web application created as a creative playground, combining clean frontend design with robust backend logic.',
-      fr: 'Une application web créée comme un terrain de jeu créatif, combinant un design frontend épuré et une logique backend robuste.',
+      en: 'A web application written in Rust, inspired by the Rouille micro-web framework and featuring Arabic UI elements as a creative exploration.',
+      fr: 'Une application web écrite en Rust, inspirée du framework Rouille, avec une exploration créative d’éléments d’interface en arabe.',
     },
-    stack: ['Next.js', 'TypeScript', 'TailwindCSS'],
+    stack: ['Rust'],
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/shakshuka' }],
+    inProgress: false,
   },
   {
     slug: 'garage-poc',
     title: 'Garage PoC',
     year: '2023',
-    role: { en: 'R&D / Personal project', fr: 'Projet R&D / personnel' },
+    role: { en: 'R&D developer', fr: 'Développeuse R&D' },
     summary: {
       en: 'A proof of concept exploring distributed storage or garage management systems.',
       fr: 'Une preuve de concept explorant les systèmes de stockage distribué ou de gestion.',
@@ -378,6 +379,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/garage_poc' },
     ],
+    inProgress: false,
   },
   {
     slug: 'type-tier',
@@ -385,17 +387,18 @@ export const projects: Project[] = [
     year: '2023',
     role: { en: 'Personal project', fr: 'Projet personnel' },
     summary: {
-      en: 'A TypeScript type-level utility library for advanced generic type manipulations.',
-      fr: 'Une bibliothèque d’utilitaires au niveau des types TypeScript pour des manipulations génériques avancées.',
+      en: 'A MonkeyType-inspired typing website built as a first web development project.',
+      fr: 'Une application web inspirée de MonkeyType conçue comme premier projet de développement web.',
     },
     description: {
-      en: 'An exploration of advanced TypeScript type system features, implementing type-level data structures, validations, and utility transformations.',
-      fr: 'Une exploration des fonctionnalités avancées du système de types TypeScript, implémentant des structures de données, des validations et des transformations utilitaires au niveau des types.',
+      en: 'A MonkeyType-inspired typing website built as a first exploration to learn full-stack web development.',
+      fr: 'Un site de dactylographie inspiré de MonkeyType développé comme première exploration pour apprendre le développement web.',
     },
-    stack: ['TypeScript'],
+    stack: ['TypeScript', 'React'],
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/type-tier' }],
+    inProgress: false,
   },
 ];
 
