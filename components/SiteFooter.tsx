@@ -72,11 +72,11 @@ export default function SiteFooter() {
         aria-label={t('toggle')}
         onClick={() => setPinned((p) => !p)}
       >
-        <span
+        {/* <span
           className={`char ${open ? 'play' : ''}`}
           style={charVars}
           aria-hidden="true"
-        />
+        /> */}
       </button>
 
       <div id="footer-links" className="footBody" inert={!open}>

@@ -17,6 +17,7 @@ export type Project = {
   images: string[]; // extra images on the project page
   links: { label: string; href: string }[];
   inProgress: boolean;
+  hide?: boolean;
 };
 
 export const projects: Project[] = [
@@ -62,6 +63,38 @@ export const projects: Project[] = [
     inProgress: true,
   },
   {
+    slug: 'legacy-todo',
+    title: 'Legacy',
+    year: '2026',
+    role: { en: 'EPITECH project', fr: 'Projet EPITECH' },
+    summary: {
+      en: 'Metrics and dashboards for an Express and BullMQ app, all running in Docker.',
+      fr: 'Métriques et tableaux de bord pour une application Express et BullMQ, le tout dans Docker.',
+    },
+    description: {
+      en: 'A school project built around an event-driven todo app: an Express API, a Redis-backed BullMQ queue for notifications, a separate worker and a MySQL database. We added observability to it, with metrics exposed to Prometheus and a Grafana dashboard, everything running in Docker Compose, and wrote an architecture decision record explaining the choices.',
+      fr: 'Un projet d’école autour d’une application de todo pilotée par les événements : une API Express, une file BullMQ sur Redis pour les notifications, un worker séparé et une base MySQL. J’y ai ajouté de l’observabilité, avec des métriques exposées à Prometheus et un tableau de bord Grafana, le tout dans Docker Compose, et j’ai rédigé un ADR qui explique les choix.',
+    },
+    stack: [
+      'Node.js',
+      'Express',
+      'BullMQ',
+      'Redis',
+      'MySQL',
+      'Prometheus',
+      'Grafana',
+      'Docker',
+    ],
+    cover: null,
+    images: [],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/LegacyEpitech/Legacy' },
+    ],
+    inProgress: false,
+    hide: true,
+  },
+  // ---------- 2025 ----------
+  {
     slug: 'play-sync',
     title: 'Play Sync',
     year: '2025',
@@ -80,8 +113,6 @@ export const projects: Project[] = [
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/play-sync' }],
     inProgress: true,
   },
-
-  // ---------- 2025 ----------
   {
     slug: 'area',
     title: 'AREA',
