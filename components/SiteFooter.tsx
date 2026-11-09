@@ -80,6 +80,11 @@ export default function SiteFooter() {
                 />
               </li>
             ))}
+            <p className="footBottom">© 2026 Lou Onezime. {t('copyright')}.</p>
+            <p className="footBottom">{t('stack')}</p>
+            <a href="#top" className="backToTop">
+              {t('backToTop')} ↑
+            </a>
           </ul>
         </div>
       </div>

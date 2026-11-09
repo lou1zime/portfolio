@@ -4,8 +4,6 @@ import type { Entry } from '@/content/experience';
 import ScrambleLink from './ScrambleLink';
 import '@/app/[locale]/projects/work.css';
 
-// A list of dated entries: period on the left, details on the right, a line between entries.
-// If an entry has `projects: [...]`, links to those projects appear under its description.
 export default function Timeline({ entries }: { entries: Entry[] }) {
   const locale = useLocale();
   const t = useTranslations('work');
@@ -23,7 +21,16 @@ export default function Timeline({ entries }: { entries: Entry[] }) {
           <li key={e.org + e.period.en} className="timelineRow">
             <p className="timelinePeriod">{tr(e.period, locale)}</p>
             <div>
-              <h3 className="timelineTitle">{e.org}</h3>
+              <h3 className="timelineTitle">
+  {e.org}
+  {e.current && (
+    <span
+      className="timelineStatus"
+      aria-label="Current position"
+      title="Current position"
+    />
+  )}
+</h3>
               <p className="timelineRole">
                 {tr(e.role, locale)} · {tr(e.place, locale)}
               </p>

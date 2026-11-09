@@ -72,7 +72,8 @@
 }
 .footLink {
   display: inline-block;
-  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  /* font-size: clamp(1.6rem, 3.4vw, 2.6rem); */
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.2;
@@ -86,6 +87,10 @@
 .footLink:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;
+}
+.footBottom {
+  text-align: right;
+  font-size: 0.8rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -112,4 +117,16 @@
 /* the revealed part, e.g. "/lou-onezime" */
 .socialHandle {
   color: var(--muted);
+}
+
+.backToTop {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+  text-align: right;
+}
+
+.backToTop:hover {
+  opacity: 0.55;
 }

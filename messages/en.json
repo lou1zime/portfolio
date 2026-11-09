@@ -40,5 +40,12 @@
     "experience": "Experience",
     "education": "Education"
   },
-  "footer": { "toggle": "Show or hide links" }
+  "footer": {
+    "toggle": "Show or hide links",
+    "copyright": "Work & illustrations by Lou Onezime",
+    "stack": "Designed & Built with Next.js, Tailwind CSS, & GSAP • Deployed on Vercel",
+    "backToTop": "back to the top",
+    "work": "Work",
+    "about": "About"
+  }
 }

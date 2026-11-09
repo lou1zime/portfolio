@@ -16,6 +16,7 @@ export type Project = {
   cover: { src: string; width: number; height: number } | null; // path under /public
   images: string[]; // extra images on the project page
   links: { label: string; href: string }[];
+  inProgress: boolean;
 };
 
 export const projects: Project[] = [
@@ -41,6 +42,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/banteay-class' },
     ],
+    inProgress: true,
   },
   {
     slug: 'play-sync',
@@ -59,6 +61,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/play-sync' }],
+    inProgress: true,
   },
   // {
   //   // remove?
@@ -90,7 +93,8 @@ export const projects: Project[] = [
   //     height: 500,
   //   },
   //   images: [],
-  //   links: [],
+  //   links: [{ label: 'GitHub', href: 'https://github.com/LegacyEpitech/Legacy' }],
+  //   inProgress: false,
   // },
 
   // ---------- 2025 ----------
@@ -111,6 +115,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/area' }],
+    inProgress: false,
   },
   {
     slug: 'gnoland-dapps',
@@ -137,6 +142,7 @@ export const projects: Project[] = [
         href: 'https://github.com/gnolang/gno/pulls?q=is%3Apr+state%3Aclosed+author%3Alou1zime',
       },
     ],
+    inProgress: false,
   },
 
   // ---------- 2024 ----------
@@ -163,6 +169,7 @@ export const projects: Project[] = [
         href: 'https://zhifters-organization.gitbook.io/maryl',
       },
     ],
+    inProgress: false,
   },
   {
     slug: 'zappy',
@@ -181,6 +188,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/MartinFillon/Zappy' }],
+    inProgress: false,
   },
   {
     slug: 'bruteforce',
@@ -201,6 +209,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/PoCInnovation/BruteForce' },
     ],
+    inProgress: false,
   },
   {
     slug: 'workshop-rust',
@@ -224,6 +233,7 @@ export const projects: Project[] = [
         href: 'https://github.com/MartinFillon/Workshop-rust',
       },
     ],
+    inProgress: false,
   },
   {
     slug: 'feed-the-beast',
@@ -244,6 +254,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/feed-the-beast' },
     ],
+    inProgress: false,
   },
   {
     slug: 'pandoc',
@@ -262,6 +273,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/pandoc' }],
+    inProgress: false,
   },
   {
     slug: 'choco-bueno',
@@ -282,6 +294,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/choco-bueno' },
     ],
+    inProgress: false,
   },
 
   // ---------- 2023 ----------
@@ -302,6 +315,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [],
+    inProgress: false,
   },
   {
     slug: 'corewar',
@@ -322,6 +336,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/MartinFillon/Corewar' },
     ],
+    inProgress: false,
   },
   {
     slug: '42zsh',
@@ -340,6 +355,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/MartinFillon/42zsh' }],
+    inProgress: false,
   },
   {
     slug: 'shakshuka',
@@ -358,6 +374,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/shakshuka' }],
+    inProgress: false,
   },
   {
     slug: 'garage-poc',
@@ -378,6 +395,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/lou1zime/garage_poc' },
     ],
+    inProgress: false,
   },
   {
     slug: 'type-tier',
@@ -396,6 +414,7 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/type-tier' }],
+    inProgress: false,
   },
 ];
 
