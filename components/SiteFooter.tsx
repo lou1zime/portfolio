@@ -7,13 +7,6 @@ import { character } from '@/content/character';
 import { site } from '@/content/site';
 import SocialLink from './SocialLink';
 
-// A black strip at the bottom of every page with a character standing on it.
-// Closed: just the strip. Open: the strip grows to show email / github / linkedin
-// and the character plays its animation, then rests on its last frame.
-//   - hover the footer or the character  -> opens while the mouse is there
-//   - click / tap the character           -> opens and stays open (click again to close)
-//   - scroll to the bottom of the page    -> opens and stays open
-//   - the About page                      -> already open
 export default function SiteFooter() {
   const t = useTranslations('footer');
   const path = usePathname();

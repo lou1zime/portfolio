@@ -18,19 +18,6 @@ export default async function About({
           {t('body')}
         </p>
       </div>
-
-      {/* <ul className="socials">
-        {site.socials.map((s) => (
-          <li key={s.label}>
-            <SocialLink
-              label={s.label}
-              handle={s.handle}
-              href={s.href}
-              scramble="handle"
-            />
-          </li>
-        ))}
-      </ul> */}
     </main>
   );
 }

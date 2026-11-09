@@ -21,9 +21,6 @@ type Props = {
   className?: string; // default 'socialLink' (the big rows on the About page)
 };
 
-// Big link. On hover the word scrambles and the handle is revealed after it:
-// "LinkedIn"  ->  "LinkedIn/lou-onezime".  Leaving scrambles it back.
-// Touch screens have no hover, so they just show the full text.
 export default function SocialLink({
   label,
   handle,
