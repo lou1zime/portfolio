@@ -47,5 +47,10 @@
     "backToTop": "haut de page",
     "work": "Projets",
     "about": "À propos"
+  },
+  "error": {
+    "hidden": "Ce projet est masqué",
+    "not-found": "Page introuvable",
+    "return": "Retour à l’accueil"
   }
 }

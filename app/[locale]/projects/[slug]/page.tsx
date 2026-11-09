@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import '../project.css';
 import ProjectLink from '@/components/ProjectLink';
 import Loading from '@/components/Loading';
+import HiddenPage from '@/components/Hidden';
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
 
@@ -23,12 +24,17 @@ export async function generateMetadata({ params }: Params) {
 
 async function ProjectContent({ params }: Params) {
   const t = await getTranslations('projects');
+  const hidden = await getTranslations('error');
 
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
   const p = getProject(slug);
   if (!p) notFound();
+
+  if (p.hide) {
+    return <HiddenPage message={hidden('hidden')} />;
+  }
 
   return (
     <main className="page">

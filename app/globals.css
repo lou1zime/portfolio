@@ -152,6 +152,8 @@ body > main {
   font-size: 1.4rem;
 }
 
+/* Loading */
+
 .loading {
   width: 100%;
   min-height: 40svh;
@@ -168,6 +170,41 @@ body > main {
   width: 160px;
   height: 160px;
   object-fit: contain;
+}
+
+/* Hidden */
+.hiddenPage {
+  flex-direction: column;
+  gap: 0px;
+}
+
+.hiddenPageImage img {
+  width: 600px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.hiddenPageImage img {
+  content: url('/cats/CAT2_B.png');
+}
+
+:root[data-theme='dark'] .hiddenPageImage img {
+  content: url('/cats/CAT2_W.png');
+}
+
+:root[data-palette='color'] .hiddenPageImage img {
+  content: url('/cats/CAT2_P.png');
+}
+
+:root[data-theme='dark'][data-palette='color'] .hiddenPageImage img {
+  content: url('/cats/CAT2_Y.png');
+}
+
+.hiddenPageMessage {
+  color: var(--fg);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .status {

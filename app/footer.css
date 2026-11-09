@@ -88,9 +88,13 @@
   outline: 2px solid currentColor;
   outline-offset: 4px;
 }
+.footLinks .footBottom:first-of-type {
+  margin-top: 16px; /* Adjust this value to increase or decrease the spacing */
+}
+
 .footBottom {
   text-align: right;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -121,7 +125,7 @@
 
 .backToTop {
   margin-top: 8px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   transition: opacity 0.2s ease;
   text-align: right;
