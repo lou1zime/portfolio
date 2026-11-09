@@ -112,18 +112,22 @@
 }
 .timelineRow {
   display: grid;
-  grid-template-columns: minmax(8rem, 14rem) 1fr;
+  grid-template-columns: minmax(8rem, 18rem) 1fr;
   gap: 8px 24px;
-  padding: 16px 0 20px;
+  padding: 16px 0 24px;
   border-top: 1px solid var(--line);
 }
 .timelinePeriod {
-  color: var(--muted);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
+  color: var(--fg);
 }
 .timelineTitle {
   font-size: 1.4rem;
+  font-weight: 500;
   letter-spacing: -0.03em;
-  line-height: 1.2;
+  line-height: 1.2; 
 }
 .timelineRole {
   margin-top: 4px;
