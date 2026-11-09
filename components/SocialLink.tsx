@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWER = 'abcdefghijklmnopqrstuvwxyz';
 
+// a random letter, matching the case of the letter it replaces
 const pick = (ref: string) => {
   const pool = ref !== ref.toLowerCase() ? UPPER : LOWER;
   return pool[Math.floor(Math.random() * pool.length)];
@@ -17,37 +18,30 @@ type Props = {
   duration?: number; // ms for the scramble
   /** what scrambles on hover: 'both', only the 'label' (LinkedIn), or only the 'handle' (/lou-onezime) */
   scramble?: 'both' | 'label' | 'handle';
+  className?: string; // default 'socialLink' (the big rows on the About page)
 };
 
+// Big link. On hover the word scrambles and the handle is revealed after it:
+// "LinkedIn"  ->  "LinkedIn/lou-onezime".  Leaving scrambles it back.
+// Touch screens have no hover, so they just show the full text.
 export default function SocialLink({
   label,
   handle,
   href,
   duration = 650,
   scramble = 'both',
+  className = 'socialLink',
 }: Props) {
   const full = label + handle;
 
-  const [text, setText] = useState(() => {
-    if (
-      typeof window !== 'undefined' &&
-      window.matchMedia('(hover: none)').matches
-    ) {
-      return full;
-    }
-    return label;
-  });
+  // Initialize touch detection during initial mount to avoid setState in effect
+  const isTouch =
+    typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches;
 
-  const shown = useRef(
-    typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches
-      ? full
-      : label
-  );
-
+  const [text, setText] = useState(() => (isTouch ? full : label));
+  const shown = useRef(isTouch ? full : label);
   const raf = useRef(0);
-  const canHover = useRef(
-    typeof window === 'undefined' || !window.matchMedia('(hover: none)').matches
-  );
+  const canHover = useRef(!isTouch);
 
   const animateTo = useCallback(
     (target: string) => {
@@ -114,8 +108,8 @@ export default function SocialLink({
   return (
     <a
       href={href}
-      className="socialLink"
-      target="_blank"
+      className={className}
+      target={href.startsWith('mailto:') ? undefined : '_blank'}
       rel="noreferrer"
       aria-label={`${label} ${handle}`}
       onMouseEnter={reveal}

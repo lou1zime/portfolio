@@ -1,0 +1,95 @@
+'use client';
+
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useTranslations } from 'next-intl';
+import { usePathname } from '@/i18n/navigation';
+import { character } from '@/content/character';
+import { site } from '@/content/site';
+import SocialLink from './SocialLink';
+
+// A black strip at the bottom of every page with a character standing on it.
+// Closed: just the strip. Open: the strip grows to show email / github / linkedin
+// and the character plays its animation, then rests on its last frame.
+//   - hover the footer or the character  -> opens while the mouse is there
+//   - click / tap the character           -> opens and stays open (click again to close)
+//   - scroll to the bottom of the page    -> opens and stays open
+//   - the About page                      -> already open
+export default function SiteFooter() {
+  const t = useTranslations('footer');
+  const path = usePathname();
+  const ref = useRef<HTMLElement>(null);
+
+  const [hovered, setHovered] = useState(false);
+  const [pinned, setPinned] = useState(false);
+  const [prevPath, setPrevPath] = useState(path);
+
+  // Reset state when path changes during render (replaces useEffect setState)
+  if (path !== prevPath) {
+    setPrevPath(path);
+    setPinned(false);
+    setHovered(false);
+  }
+
+  const isAbout = path.startsWith('/about');
+  const open = isAbout || pinned || hovered;
+
+  // once pinned open, make sure the links are on screen
+  useEffect(() => {
+    if (!pinned) return;
+    const id = setTimeout(
+      () => ref.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }),
+      400
+    );
+    return () => clearTimeout(id);
+  }, [pinned]);
+
+  const { frames, frameWidth, frameHeight, displayWidth, duration, sprite } =
+    character;
+  const charVars = {
+    '--sprite': `url(${sprite})`,
+    '--frames': frames,
+    '--cw': `${displayWidth}px`,
+    '--ch': `${Math.round((displayWidth * frameHeight) / frameWidth)}px`,
+    '--dur': `${duration}ms`,
+  } as CSSProperties;
+
+  return (
+    <footer
+      ref={ref}
+      className={`siteFooter ${open ? 'open' : ''}`}
+      // hover only on devices that have it; touch screens use the tap on the character
+      onMouseEnter={() =>
+        window.matchMedia('(hover: hover)').matches && setHovered(true)
+      }
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* <button
+        type="button"
+        className="charBtn"
+        aria-expanded={open}
+        aria-controls="footer-links"
+        aria-label={t('toggle')}
+        onClick={() => setPinned((p) => !p)}
+      >
+        <span className={`char ${open ? 'play' : ''}`} style={charVars} aria-hidden="true" />
+      </button> */}
+
+      <div id="footer-links" className="footBody" inert={!open}>
+        <div className="footInner">
+          <ul className="footLinks">
+            {site.socials.map((l) => (
+              <li key={l.label}>
+                <SocialLink
+                  className="footLink"
+                  label={l.label}
+                  handle={l.handle}
+                  href={l.href}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
+}
