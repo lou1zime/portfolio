@@ -22,15 +22,15 @@ export default function Timeline({ entries }: { entries: Entry[] }) {
             <p className="timelinePeriod">{tr(e.period, locale)}</p>
             <div>
               <h3 className="timelineTitle">
-  {e.org}
-  {e.current && (
-    <span
-      className="timelineStatus"
-      aria-label="Current position"
-      title="Current position"
-    />
-  )}
-</h3>
+                {e.org}
+                {e.current && (
+                  <span
+                    className="timelineStatus"
+                    aria-label="Current position"
+                    title="Current position"
+                  />
+                )}
+              </h3>
               <p className="timelineRole">
                 {tr(e.role, locale)} · {tr(e.place, locale)}
               </p>

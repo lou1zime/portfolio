@@ -73,7 +73,7 @@ export const education: Entry[] = [
       en: 'Grande École programme (Bac +5).',
       fr: 'Programme Grande École (Bac +5).',
     },
-    current: true
+    current: true,
   },
   {
     org: 'Chung-Ang University',
