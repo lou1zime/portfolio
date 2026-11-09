@@ -47,5 +47,10 @@
     "backToTop": "back to the top",
     "work": "Work",
     "about": "About"
+  },
+  "error": {
+    "hidden": "This project is hidden",
+    "not-found": "Page not found",
+    "return": "Return to home"
   }
 }
