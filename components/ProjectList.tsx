@@ -1,7 +1,7 @@
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { projects, tr, type Project } from '@/content/projects';
-import '@/app/project.css';
+import '@/app/[locale]/projects/project.css';
 
 export default function ProjectList() {
   const locale = useLocale();

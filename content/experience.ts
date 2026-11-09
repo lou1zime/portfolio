@@ -6,6 +6,7 @@ export type Entry = {
   place: Localized;
   period: Localized;
   description?: Localized;
+  projects?: string[];
 };
 
 export const experience: Entry[] = [
@@ -21,6 +22,7 @@ export const experience: Entry[] = [
       en: 'Designed and tested concepts for decentralised applications (dApps) on the open-source gno.land blockchain platform.',
       fr: 'Conception et test de concepts d’applications décentralisées (dApps) sur la plateforme blockchain open source gno.land.',
     },
+    projects: ['gnoland-dapps'],
   },
   {
     org: 'EPITECH',
@@ -31,6 +33,7 @@ export const experience: Entry[] = [
       en: 'Technical assistant for first- and second-year students in C/C++, Haskell and Docker.',
       fr: 'Assistante technique pour les étudiants de première et deuxième année en C/C++, Haskell et Docker.',
     },
+    projects: ['workshop-rust'],
   },
   {
     org: 'PoC Innovation',
@@ -41,6 +44,7 @@ export const experience: Entry[] = [
       en: 'Development of open-source projects.',
       fr: 'Développement de projets open source.',
     },
+    projects: ['bruteforce'],
   },
   {
     org: 'WALLIX',
@@ -51,6 +55,7 @@ export const experience: Entry[] = [
       en: 'Refactored the Bastion communication layer and migrated it to a Rust HTTP(S) reverse proxy.',
       fr: 'Refonte de la couche de communication du Bastion et migration vers un proxy HTTP(S) inverse en Rust.',
     },
+    projects: ['rust-reverse-proxy'],
   },
 ];
 

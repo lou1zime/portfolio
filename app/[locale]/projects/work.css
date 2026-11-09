@@ -135,9 +135,30 @@
 .timelineText {
   margin-top: 8px;
   color: var(--muted);
+  max-width: 62ch;
 }
 @media (max-width: 760px) {
   .timelineRow {
     grid-template-columns: 1fr;
   }
+}
+
+.timelineRelated {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.timelineLink {
+  display: inline-flex;
+  color: var(--fg);
+  font-weight: 700;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.2s;
+}
+.timelineLink:hover {
+  border-color: var(--fg);
 }
