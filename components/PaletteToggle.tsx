@@ -10,9 +10,6 @@ type Props = {
   initial?: boolean;
 };
 
-// Paint-bucket button: turns the purple/yellow color palette on and off.
-// Off = empty bucket. On = bucket tilts and fills with paint.
-// The palette itself lives on <html data-palette="color">.
 export default function PaletteToggle({ initial = false }: Props) {
   const t = useTranslations('nav');
   const [on, setOn] = useState(initial);
