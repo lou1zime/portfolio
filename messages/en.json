@@ -17,14 +17,15 @@
     "more": "{count} more →"
   },
   "home": {
-    "status": "Open to a 6-month full-time internship from 1 March 2027"
+    "status": "Looking for a 6-month full-time internship from 1 March 2027"
   },
   "work": {
     "title": "Work",
     "projects": "Projects",
     "experience": "Experience",
     "education": "Education",
-    "switch": "Choose a list"
+    "switch": "Choose a list",
+    "related": "Related projects"
   },
   "projects": {
     "title": "All work",
@@ -38,5 +39,6 @@
     "email": "Email",
     "experience": "Experience",
     "education": "Education"
-  }
+  },
+  "footer": { "toggle": "Show or hide links" }
 }

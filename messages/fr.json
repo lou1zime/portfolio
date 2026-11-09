@@ -17,14 +17,15 @@
     "more": "{count} de plus →"
   },
   "home": {
-    "status": "Disponible pour un stage de 6 mois à temps plein à partir du 1er mars 2027"
+    "status": "En recherce de stage de 6 mois à temps plein à partir du 1er mars 2027"
   },
   "work": {
     "title": "Parcours",
     "projects": "Projets",
     "experience": "Expérience",
     "education": "Formation",
-    "switch": "Choisir une liste"
+    "switch": "Choisir une liste",
+    "related": "Projets liés"
   },
   "projects": {
     "title": "Tous les projets",
@@ -38,5 +39,6 @@
     "email": "E-mail",
     "experience": "Expérience",
     "education": "Formation"
-  }
+  },
+  "footer": { "toggle": "Afficher ou masquer les liens" }
 }

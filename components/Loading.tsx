@@ -6,22 +6,21 @@ type Props = {
 };
 
 export default function Loading({
-  src = '/ATTACHED-FAST-LOOP-ORIG.png',
-  alt = 'Loading...',
+  src = '/ATTACHED-Y-FAST-LOOP.webp',
+  alt = '...',
 }: Props) {
   return (
-    <div className="flex items-center justify-center min-h-[50vh] w-full bg-transparent">
-      <div className="relative w-16 h-16">
-        {' '}
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          style={{ objectFit: 'contain' }}
-          unoptimized // Recommended for animated GIFs in Next.js
-          priority
-        />
-      </div>
-    </div>
+    <main className="loading">
+      <Image
+        src={src}
+        alt={alt}
+        // fill
+        width={800}
+        height={800}
+        style={{ objectFit: 'contain' }}
+        unoptimized // Recommended for animated GIFs in Next.js
+        priority
+      />
+    </main>
   );
 }
