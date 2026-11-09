@@ -114,7 +114,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'gnoland-dapps',
-    title: '*gno.land dApps',
+    title: 'gno.land dApps',
     year: '2025',
     role: {
       en: 'Junior developer (remote)',
@@ -287,7 +287,7 @@ export const projects: Project[] = [
   // ---------- 2023 ----------
   {
     slug: 'rust-reverse-proxy',
-    title: '*Rust reverse proxy migration',
+    title: 'Rust reverse proxy migration',
     year: '2023',
     role: { en: 'Intern developer', fr: 'Développeuse, stagiaire' },
     summary: {

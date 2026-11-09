@@ -56,7 +56,7 @@ export default function SiteFooter() {
       }
       onMouseLeave={() => setHovered(false)}
     >
-      {/* <button
+      <button
         type="button"
         className="charBtn"
         aria-expanded={open}
@@ -64,8 +64,8 @@ export default function SiteFooter() {
         aria-label={t('toggle')}
         onClick={() => setPinned((p) => !p)}
       >
-        <span className={`char ${open ? 'play' : ''}`} style={charVars} aria-hidden="true" />
-      </button> */}
+        {/* <span className={`char ${open ? 'play' : ''}`} style={charVars} aria-hidden="true" /> */}
+      </button>
 
       <div id="footer-links" className="footBody" inert={!open}>
         <div className="footInner">

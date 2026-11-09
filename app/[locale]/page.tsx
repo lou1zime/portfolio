@@ -15,13 +15,15 @@ async function Home({ params }: Params) {
     <main>
       <section className="intro">
         <h1>{site.name}</h1>
-        <h2> {tr(site.tagline, locale)}</h2>
+        <h2>{tr(site.tagline, locale)}</h2>
       </section>
       <section className="sectionHome">
         <CursorDoodle />
-        <a className="details" href={`mailto:${site.email}`}>
-          {t('status')}
-        </a>
+        <div className="details">
+          <a className="status" href={`mailto:${site.email}`}>
+            {t('status')}
+          </a>
+        </div>
       </section>
     </main>
   );
