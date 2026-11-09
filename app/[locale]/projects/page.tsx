@@ -25,6 +25,8 @@ async function Work({ params, searchParams }: Props) {
       ? (list as WorkKey)
       : null;
 
+  const visibleProjects = projects.filter((p) => !p.hide);
+
   return (
     <main className="section">
       <h1 className="srOnly">{t('title')}</h1>
@@ -36,7 +38,7 @@ async function Work({ params, searchParams }: Props) {
           education: t('education'),
         }}
         counts={{
-          projects: projects.length,
+          projects: visibleProjects.length,
           experience: experience.length,
           education: education.length,
         }}
