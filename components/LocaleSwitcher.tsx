@@ -5,8 +5,8 @@ import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 
-// What each language is called in the navbar and in the dropdown.
-// Adding a language later = add it to i18n/routing.ts AND add a line here.
+// what each language is called in the navbar and in the dropdown.
+// adding a language later = add it to i18n/routing.ts AND add a line here.
 const LANGS: Record<string, { short: string; name: string }> = {
   en: { short: 'EN', name: 'English' },
   fr: { short: 'FR', name: 'Français' },

@@ -55,6 +55,14 @@ export default function SiteFooter() {
         window.matchMedia('(hover: hover)').matches && setHovered(true)
       }
       onMouseLeave={() => setHovered(false)}
+      onClick={(e) => {
+        if (!window.matchMedia('(hover: none)').matches) return;
+
+        // don't toggle when clicking an actual link or button
+        if ((e.target as HTMLElement).closest('a, button')) return;
+
+        setPinned((p) => !p);
+      }}
     >
       <button
         type="button"
@@ -64,7 +72,11 @@ export default function SiteFooter() {
         aria-label={t('toggle')}
         onClick={() => setPinned((p) => !p)}
       >
-        {/* <span className={`char ${open ? 'play' : ''}`} style={charVars} aria-hidden="true" /> */}
+        <span
+          className={`char ${open ? 'play' : ''}`}
+          style={charVars}
+          aria-hidden="true"
+        />
       </button>
 
       <div id="footer-links" className="footBody" inert={!open}>
@@ -80,6 +92,11 @@ export default function SiteFooter() {
                 />
               </li>
             ))}
+            <p className="footBottom">© 2026 Lou Onezime. {t('copyright')}.</p>
+            <p className="footBottom">{t('stack')}</p>
+            <a href="#top" className="backToTop">
+              {t('backToTop')} ↑
+            </a>
           </ul>
         </div>
       </div>

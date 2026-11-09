@@ -162,3 +162,29 @@
 .timelineLink:hover {
   border-color: var(--fg);
 }
+
+.timelineTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.timelineStatus {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--fg);
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timelineStatus {
+    animation: none;
+  }
+}

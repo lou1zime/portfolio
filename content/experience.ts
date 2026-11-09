@@ -7,6 +7,7 @@ export type Entry = {
   period: Localized;
   description?: Localized;
   projects?: string[];
+  current?: boolean;
 };
 
 export const experience: Entry[] = [
@@ -44,7 +45,7 @@ export const experience: Entry[] = [
       en: 'Development of open-source projects.',
       fr: 'Développement de projets open source.',
     },
-    projects: ['bruteforce'],
+    projects: ['bruteforce', 'garage-poc'],
   },
   {
     org: 'WALLIX',
@@ -72,6 +73,7 @@ export const education: Entry[] = [
       en: 'Grande École programme (Bac +5).',
       fr: 'Programme Grande École (Bac +5).',
     },
+    current: true,
   },
   {
     org: 'Chung-Ang University',

@@ -6,7 +6,7 @@ type Props = {
 };
 
 export default function Loading({
-  src = '/ATTACHED-Y-FAST-LOOP-COMPRESSED.webp',
+  src = '/attached/ATTACHED-Y-FAST-LOOP_COMPRESSED.webp',
   alt = '...',
 }: Props) {
   return (
@@ -15,8 +15,8 @@ export default function Loading({
         src={src}
         alt={alt}
         // fill
-        width={800}
-        height={800}
+        width={400}
+        height={400}
         style={{ objectFit: 'contain' }}
         unoptimized // Recommended for animated GIFs in Next.js
         priority

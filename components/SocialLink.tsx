@@ -31,7 +31,7 @@ export default function SocialLink({
 }: Props) {
   const full = label + handle;
 
-  // Initialize touch detection during initial mount to avoid setState in effect
+  // initialize touch detection during initial mount to avoid setState in effect
   const isTouch =
     typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches;
 

@@ -24,7 +24,16 @@ export default function ProjectList() {
             {items.map((p) => (
               <li key={p.slug}>
                 <Link href={`/projects/${p.slug}`} className="projectRow">
-                  <span className="projectTitle">{p.title}</span>
+                  <span className="projectTitleLine">
+                    <span className="projectTitle">{p.title}</span>
+                    {p.inProgress && (
+                      <span
+                        className="projectStatus"
+                        aria-label="In progress"
+                        title="In progress"
+                      />
+                    )}
+                  </span>
                   <span className="projectSummary">
                     {tr(p.summary, locale)}
                   </span>
