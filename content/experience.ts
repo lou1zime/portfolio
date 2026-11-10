@@ -45,7 +45,7 @@ export const experience: Entry[] = [
       en: 'Development of open-source projects.',
       fr: 'Développement de projets open source.',
     },
-    projects: ['bruteforce', 'garage-poc'],
+    projects: ['bruteforce', 'garage-poc', 'virtual-no-ads'],
   },
   {
     org: 'WALLIX',
