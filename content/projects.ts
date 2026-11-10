@@ -307,7 +307,10 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [
-      { label: 'GitHub', href: 'https://github.com/MartinFillon/imageCompressor' },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/MartinFillon/imageCompressor',
+      },
     ],
     inProgress: false,
   },
@@ -429,7 +432,10 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [
-      { label: 'GitHub', href: 'https://github.com/PoCInnovation/Virtual-No-Ads' },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/PoCInnovation/Virtual-No-Ads',
+      },
     ],
     inProgress: false,
   },

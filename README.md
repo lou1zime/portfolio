@@ -4,7 +4,6 @@
 
 My developer portfolio
 
-
 ---
 
 ## Tech Stack
