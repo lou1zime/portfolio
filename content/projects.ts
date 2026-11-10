@@ -66,7 +66,7 @@ export const projects: Project[] = [
     slug: 'legacy-todo',
     title: 'Legacy',
     year: '2026',
-    role: { en: 'EPITECH project', fr: 'Projet EPITECH' },
+    role: { en: 'EPITECH project ', fr: 'Projet EPITECH' },
     summary: {
       en: 'Metrics and dashboards for an Express and BullMQ app, all running in Docker.',
       fr: 'Métriques et tableaux de bord pour une application Express et BullMQ, le tout dans Docker.',
@@ -291,6 +291,27 @@ export const projects: Project[] = [
     inProgress: false,
   },
   {
+    slug: 'image-compressor',
+    title: 'Image Compressor',
+    year: '2024',
+    role: { en: 'EPITECH team project', fr: 'Projet d’équipe EPITECH' },
+    summary: {
+      en: 'An image compression tool written in Haskell.',
+      fr: 'Un outil de compression d’images écrit en Haskell.',
+    },
+    description: {
+      en: 'An EPITECH project focused on image processing and data compression algorithms, written entirely in Haskell.',
+      fr: 'Un projet EPITECH axé sur le traitement d’images et les algorithmes de compression de données, entièrement écrit en Haskell.',
+    },
+    stack: ['Haskell'],
+    cover: null,
+    images: [],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/MartinFillon/imageCompressor' },
+    ],
+    inProgress: false,
+  },
+  {
     slug: 'choco-bueno',
     title: 'Choco Bueno',
     year: '2024',
@@ -389,6 +410,27 @@ export const projects: Project[] = [
     cover: null,
     images: [],
     links: [{ label: 'GitHub', href: 'https://github.com/lou1zime/shakshuka' }],
+    inProgress: false,
+  },
+  {
+    slug: 'virtual-no-ads',
+    title: 'Virtual No Ads',
+    year: '2023',
+    role: { en: 'Personal / R&D project', fr: 'Projet personnel / R&D' },
+    summary: {
+      en: 'A network-level and software-based ad blocker written in Rust.',
+      fr: 'Un bloqueur de publicités au niveau réseau et logiciel écrit en Rust.',
+    },
+    description: {
+      en: 'Virtual No Ads is a project aimed at providing a streamlined browsing experience by filtering out unwanted ads. It consists of a Raspberry Pi private WiFi network setup that intercepts ad packages at the network layer, alongside a lightweight, customizable software adblocker for direct device installation.',
+      fr: 'Virtual No Ads est un projet visant à offrir une navigation fluide en filtrant les publicités indésirables. Il combine un réseau Wi-Fi privé sur Raspberry Pi interceptant les paquets publicitaires au niveau réseau, et un bloqueur logiciel léger et personnalisable.',
+    },
+    stack: ['Rust', 'Networking', 'Hardware'],
+    cover: null,
+    images: [],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/PoCInnovation/Virtual-No-Ads' },
+    ],
     inProgress: false,
   },
   {
