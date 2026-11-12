@@ -68,6 +68,7 @@ async function ProjectContent({ params }: Params) {
               key={l.href}
               href={l.href}
               label={l.label === 'GitHub' ? t('sourceCode') : l.label}
+              projectSlug={p.slug}
             />
           ))}
         </div>
