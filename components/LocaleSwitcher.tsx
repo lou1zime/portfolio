@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import posthog from 'posthog-js';
 
 // what each language is called in the navbar and in the dropdown.
 // adding a language later = add it to i18n/routing.ts AND add a line here.
@@ -12,6 +13,9 @@ const LANGS: Record<string, { short: string; name: string }> = {
   fr: { short: 'FR', name: 'Français' },
 };
 const short = (l: string) => LANGS[l]?.short ?? l.toUpperCase();
+const posthogEnabled = Boolean(
+  process.env.NEXT_PUBLIC_POSTHOG_KEY && process.env.NEXT_PUBLIC_POSTHOG_HOST
+);
 
 export default function LocaleSwitcher({ onOpen }: { onOpen?: () => void }) {
   const locale = useLocale();
@@ -39,7 +43,15 @@ export default function LocaleSwitcher({ onOpen }: { onOpen?: () => void }) {
 
   const choose = (next: string) => {
     setOpen(false);
-    if (next !== locale) router.replace(pathname, { locale: next }); // same page, other language
+    if (next !== locale) {
+      if (posthogEnabled) {
+        posthog.capture('locale_changed', {
+          from_locale: locale,
+          to_locale: next,
+        });
+      }
+      router.replace(pathname, { locale: next }); // same page, other language
+    }
   };
 
   return (

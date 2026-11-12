@@ -1,9 +1,13 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import posthog from 'posthog-js';
 
 const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+const posthogEnabled = Boolean(
+  process.env.NEXT_PUBLIC_POSTHOG_KEY && process.env.NEXT_PUBLIC_POSTHOG_HOST
+);
 
 // a random letter, matching the case of the letter it replaces
 const pick = (ref: string) => {
@@ -113,6 +117,14 @@ export default function SocialLink({
       onMouseLeave={hide}
       onFocus={reveal}
       onBlur={hide}
+      onClick={() => {
+        if (posthogEnabled) {
+          posthog.capture('social_link_opened', {
+            platform: label,
+            destination_type: href.startsWith('mailto:') ? 'email' : 'social',
+          });
+        }
+      }}
     >
       <span aria-hidden="true">
         {text.slice(0, label.length)}
