@@ -18,7 +18,7 @@ export default function Loading({
         width={400}
         height={400}
         style={{ objectFit: 'contain' }}
-        unoptimized // Recommended for animated GIFs in Next.js
+        unoptimized
         priority
       />
     </main>

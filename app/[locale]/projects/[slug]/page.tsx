@@ -42,7 +42,7 @@ async function ProjectContent({ params }: Params) {
       <div className="meta">
         <span>{p.year}</span>
         <span>{tr(p.role, locale)}</span>
-        <span>{p.stack.join(', ')}</span>
+        {/* <span>{p.stack.join(', ')}</span> */}
       </div>
 
       {p.cover && (

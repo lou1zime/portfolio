@@ -11,6 +11,8 @@ import SiteFooter from '@/components/SiteFooter';
 import '../globals.css';
 import '../navbar.css';
 import '../footer.css';
+import HiddenPage from '@/components/Hidden';
+import { PostHogProvider } from '../providers';
 
 export const instant = false;
 
@@ -51,8 +53,10 @@ export async function generateMetadata({
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) notFound();
-  setRequestLocale(locale);
+  const isValidLocale = hasLocale(routing.locales, locale);
+  const activeLocale = isValidLocale ? locale : routing.defaultLocale;
+
+  setRequestLocale(activeLocale);
 
   const jar = await cookies();
   const theme = jar.get('theme')?.value;
@@ -73,9 +77,14 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
       <body className={font.className}>
         <NextIntlClientProvider>
-          <Navbar initialPalette={initialPalette} initialTheme={initialTheme} />
-          {children}
-          <SiteFooter />
+          <PostHogProvider>
+            <Navbar
+              initialPalette={initialPalette}
+              initialTheme={initialTheme}
+            />
+            {children}
+            <SiteFooter />
+          </PostHogProvider>
         </NextIntlClientProvider>
       </body>
     </html>

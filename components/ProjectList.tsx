@@ -6,8 +6,6 @@ import '@/app/[locale]/projects/project.css';
 export default function ProjectList() {
   const locale = useLocale();
 
-  // Group by year, newest year first. Remove the .sort() if you'd rather keep
-  // the order you wrote the projects in (they are still grouped when years match).
   const groups = new Map<string, Project[]>();
   for (const p of [...projects].sort(
     (a, b) => Number(b.year) - Number(a.year)

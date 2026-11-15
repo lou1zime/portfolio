@@ -1,4 +1,3 @@
-import CursorDoodle from '@/components/Cursor';
 import Loading from '@/components/Loading';
 import { site, tr } from '@/content/site';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -18,7 +17,7 @@ async function Home({ params }: Params) {
         <h2>{tr(site.tagline, locale)}</h2>
       </section>
       <section className="sectionHome">
-        <CursorDoodle />
+        {/* <CursorDoodle /> */}
         <div className="details">
           <a className="status" href={`mailto:${site.email}`}>
             {t('status')}
