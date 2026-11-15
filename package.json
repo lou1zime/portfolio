@@ -21,6 +21,10 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
+    "@opentelemetry/api-logs": "^0.223.0",
+    "@opentelemetry/exporter-logs-otlp-http": "^0.301.2",
+    "@opentelemetry/resources": "^3.1.1",
+    "@opentelemetry/sdk-logs": "^3.1.1",
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.2",
     "@tailwindcss/postcss": "^4.3.5",
@@ -33,6 +37,7 @@
     "next": "16.4.2",
     "next-intl": "^4.14.9",
     "postcss": "^8.5.32",
+    "posthog-js": "^1.450.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "shadcn": "^4.23.0",

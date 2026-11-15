@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type ReactNode } from 'react';
+import posthog from 'posthog-js';
 
 export type WorkKey = 'projects' | 'experience' | 'education';
 const KEYS: WorkKey[] = ['projects', 'experience', 'education'];
@@ -29,6 +30,10 @@ export default function WorkAccordion({
   const toggle = (key: WorkKey) => {
     const next = open === key ? null : key;
     setOpen(next);
+    posthog.capture('work_section_toggled', {
+      section: key,
+      is_open: next !== null,
+    });
 
     // keep the address in sync so a section can be linked directly
     const url = new URL(window.location.href);

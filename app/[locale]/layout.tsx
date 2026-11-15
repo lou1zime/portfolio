@@ -1,3 +1,4 @@
+import { SeverityNumber } from '@opentelemetry/api-logs';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
@@ -8,6 +9,7 @@ import { routing } from '@/i18n/routing';
 import { site } from '@/content/site';
 import { cookies } from 'next/headers';
 import SiteFooter from '@/components/SiteFooter';
+import { posthogLogger } from '@/instrumentation';
 import '../globals.css';
 import '../navbar.css';
 import '../footer.css';
@@ -60,6 +62,15 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const initialTheme = theme === 'dark' || theme === 'light' ? theme : 'light';
   const initialPalette = palette === 'color';
+
+  posthogLogger?.emit({
+    body: 'portfolio page rendered',
+    severityNumber: SeverityNumber.INFO,
+    attributes: {
+      event: 'portfolio_page_rendered',
+      locale,
+    },
+  });
 
   return (
     <html
