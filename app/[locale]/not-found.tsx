@@ -2,7 +2,7 @@ import HiddenPage from '@/components/Hidden';
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 import Loading from '@/components/Loading';
-import './globals.css';
+import '../globals.css';
 
 async function NotFound() {
   const t = await getTranslations('error');
