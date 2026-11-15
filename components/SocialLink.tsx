@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import posthog from 'posthog-js';
 
 const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWER = 'abcdefghijklmnopqrstuvwxyz';
@@ -113,6 +114,7 @@ export default function SocialLink({
       onMouseLeave={hide}
       onFocus={reveal}
       onBlur={hide}
+      onClick={() => posthog.capture('social_link_clicked', { channel: label })}
     >
       <span aria-hidden="true">
         {text.slice(0, label.length)}
